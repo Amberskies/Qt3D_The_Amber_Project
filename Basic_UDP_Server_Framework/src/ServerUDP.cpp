@@ -48,10 +48,19 @@ void ServerUDP::readyRead()
 	// (unless the pointers are 0).
 
 	socket->readDatagram(buffer.data(), buffer.size(), &sender, &senderPort);
-
-	qDebug() << "Message from: " << sender.toString();
-	qDebug() << "Message port: " << senderPort;
-	qDebug() << "Message: " << buffer;
+	int account = buffer.toInt();
+	if (account == 99)
+	{
+		qDebug() << "Message from: " << sender.toString();
+		qDebug() << "Message port: " << senderPort;
+		qDebug() << "Message: " << buffer << " :Admin Logged on.";
+	}
+	else
+	{
+		qDebug() << "Message from: " << sender.toString();
+		qDebug() << "Message port: " << senderPort;
+		qDebug() << "Message: " << buffer;
+	}
 }
 
 

@@ -8,6 +8,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Basic_Framework", "Basic_Framework\Basic_Framework.vcxproj", "{5153AC9C-4651-45DF-9547-E01015BF37D5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AmberClient", "AmberClient\AmberClient.vcxproj", "{201704FC-A47D-4E7B-9527-740C67DF5BF9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B12702AD-ABFB-343A-A199-8E24837244A3} = {B12702AD-ABFB-343A-A199-8E24837244A3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

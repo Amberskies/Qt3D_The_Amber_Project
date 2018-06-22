@@ -30,11 +30,6 @@
     <Filter Include="Src\Network">
       <UniqueIdentifier>{c6e9c595-5e95-40e2-9960-1497b4779535}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-      <ParseFiles>true</ParseFiles>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -63,7 +58,7 @@
       <Filter>Src\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="src\Network\NetworkManager.cpp">
-      <Filter>Src</Filter>
+      <Filter>Src\Network</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +75,7 @@
       <Filter>Src\Rendering</Filter>
     </QtMoc>
     <QtMoc Include="src\Network\NetworkManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Src\Network</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>

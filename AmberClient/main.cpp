@@ -18,11 +18,10 @@ int main(int argc, char *argv[])
 
 /*Notes
 Basic framwork setup
+Basic Client Log on recognition test use Acount 99 as Admin log on
 
 ***************************************
 TODO: 
-	Basic Client Log on recognition test use Acount 99 as Admin log on
-
 	AssetManager:
 		- read/write a formated textFile(later MySQL or Both)
 		- load assets specified in text file

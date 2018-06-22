@@ -10,7 +10,7 @@ NetworkManager::NetworkManager(QObject *parent)
 	// to bind to an address and port using bind()
 	// bool QAbstractSocket::bind(const QHostAddress & address, 
 	//     quint16 port = 0, BindMode mode = DefaultForPlatform)
-	socket->bind(QHostAddress::LocalHost, 44250);
+	socket->bind(QHostAddress("192.168.0.100"), 44250);
 
 	connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
@@ -23,7 +23,8 @@ NetworkManager::~NetworkManager()
 void NetworkManager::Test()
 {
 	QByteArray Data;
-	Data.append("Admin Logging on.");
+	Data.append("99");
+	qWarning("Logging on.");
 
 	// Sends the datagram datagram 
 	// to the host address and at port.

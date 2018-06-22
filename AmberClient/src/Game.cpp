@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include "src/Network/NetworkManager.h"
 
 Game::Game(Window3D & window3D) :
 	m_window3D(window3D)
@@ -24,6 +24,10 @@ void Game::Go()
 {
 	// setRootEntity starts the Qt3D engine.
 	m_window3D.setRootEntity(m_window3D.GetSceneRoot());
+	// Test ////////////////////////////////////////////
+	NetworkManager nm;
+	nm.Test();
+	////////////////////////////////////////////////////
 	m_timer.start(10);
 }
 
