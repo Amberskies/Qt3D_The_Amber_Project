@@ -22,6 +22,9 @@
     <Filter Include="Src\Physx">
       <UniqueIdentifier>{f138966c-1c90-439a-aa4b-099616ec9972}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Network">
+      <UniqueIdentifier>{e78ba81d-80ec-433a-b99a-535c9f872517}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
