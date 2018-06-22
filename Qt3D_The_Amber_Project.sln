@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Basic_UDP_Server_Framework", "Basic_UDP_Server_Framework\Basic_UDP_Server_Framework.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Basic_Framework", "Basic_Framework\Basic_Framework.vcxproj", "{5153AC9C-4651-45DF-9547-E01015BF37D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,12 +17,16 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.Build.0 = Debug|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
+		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Debug|x64.ActiveCfg = Debug|x64
+		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Debug|x64.Build.0 = Debug|x64
+		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Release|x64.ActiveCfg = Release|x64
+		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		Qt5Version = Qt5
 		SolutionGuid = {9B8E3171-E9AD-4344-B609-BEDD2F2AB4FA}
+		Qt5Version = Qt5
 	EndGlobalSection
 EndGlobal
