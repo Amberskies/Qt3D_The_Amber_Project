@@ -98,6 +98,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Core\AssetManager.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
     <ClCompile Include="src\Core\ModelLoader.cpp" />
     <ClCompile Include="src\Game.cpp" />
@@ -112,6 +113,7 @@
     <QtMoc Include="src\Game.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\AssetManager.h" />
     <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\ModelLoader.h" />
     <QtMoc Include="src\Network\NetworkManager.h">

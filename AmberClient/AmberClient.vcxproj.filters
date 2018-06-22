@@ -60,6 +60,9 @@
     <ClCompile Include="src\Network\NetworkManager.cpp">
       <Filter>Src\Network</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\AssetManager.cpp">
+      <Filter>Src\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\Game.h">
@@ -90,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="src\Rendering\Graphics.h">
       <Filter>Src\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\AssetManager.h">
+      <Filter>Src\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "src/Network/NetworkManager.h"
+#include "src/Core/AssetManager.h"
 
 Game::Game(Window3D & window3D) :
 	m_window3D(window3D)
@@ -27,6 +28,8 @@ void Game::Go()
 	// Test ////////////////////////////////////////////
 	NetworkManager nm;
 	nm.Test();
+	AssetManager am;
+	am.LoadAssetsFromTextFile();
 	////////////////////////////////////////////////////
 	m_timer.start(10);
 }
