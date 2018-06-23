@@ -9,8 +9,7 @@ Game::Game(Window3D & window3D) :
 	// Take the root from the main window and give it to the Graphics
 	m_gfx->SetRoot(m_window3D.GetSceneRoot());
 	
-	m_gfx->CreatePlayer();
-	m_gfx->CreateMap();
+	
 
 	// connect the main Game Loop
 	connect(&m_timer, SIGNAL(timeout()), this, SLOT(MainGameLoop()));
@@ -23,14 +22,16 @@ Game::~Game()
 
 void Game::Go()
 {
-	// setRootEntity starts the Qt3D engine.
-	m_window3D.setRootEntity(m_window3D.GetSceneRoot());
 	// Test ////////////////////////////////////////////
 	NetworkManager nm;
 	nm.Test();
-	AssetManager am;
-	am.LoadAssetsFromTextFile();
+	m_gfx->CreatePlayer();
+	m_gfx->CreateMap();
 	////////////////////////////////////////////////////
+
+	// setRootEntity starts the Qt3D engine.
+	m_window3D.setRootEntity(m_window3D.GetSceneRoot());
+
 	m_timer.start(10);
 }
 

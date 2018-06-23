@@ -1,5 +1,16 @@
 #pragma once
 
+#include <QFile>
+#include <QDebug>
+#include <QVector>
+
+struct Asset
+{
+	int id = -1;
+	QString name = "";
+	QString meshFile = "";
+	QString textureFile = "";
+};
 
 class AssetManager
 {
@@ -9,10 +20,10 @@ public:
 	virtual ~AssetManager();
 
 	void LoadAssetsFromTextFile();
+	Asset GetAsset(int i);
+
 private:
-
-
-
+	QVector <Asset> m_assets;
 };
 
 /*Notes
