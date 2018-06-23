@@ -20,12 +20,14 @@ int main(int argc, char *argv[])
 Basic framwork setup
 Basic Client Log on recognition test use Acount 99 as Admin log on
 
+AssetManager:
+	- read/write a formated textFile(later MySQL or Both)
+	- load assets specified in text file
+	- show example on screen (temporary test) - output to console
+	- ??? think about Maps - used for Test code.
+
 ***************************************
 TODO: 
-	AssetManager:
-		- read/write a formated textFile(later MySQL or Both)
-		- load assets specified in text file
-		- show example on screen (temporary test)
-		- ??? think about Maps ???
+	
 
 */
