@@ -20,13 +20,30 @@ void AssetManager::LoadAssetsFromTextFile()
 	QFile file("../Assets/Assets.txt");
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 	{
-		qWarning("file not found");
+		qWarning("file Assets.txt not found.");
 		return;
 	}
-
-	while (!file.atEnd())
+	QTextStream in(&file);
+	while (!in.atEnd())
 	{
-		QByteArray line = file.readLine();
+		QString line = in.readLine();
+		line = line.simplified();
+
+		if (line.startsWith('#')  || line.isEmpty()) continue;
+		
 		qDebug() << line;
+
+		QStringList temp = line.split(' ');
+		int id = temp[0].toInt();
+		QString name = temp[1];
+		QString meshFile = temp[2];
+		QString textureFile = temp[3];
+		qDebug() << " ";
+		qDebug() << " Id: " << id;
+		qDebug() << "Name: " << name;
+		qDebug() << "Mesh: " << meshFile;
+		qDebug() << "Texture: " << textureFile;
+		qDebug() << "************************************";
 	}
+	file.close();
 }
