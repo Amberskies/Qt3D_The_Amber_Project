@@ -4,11 +4,12 @@
 Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent)
 {
-	// Empty
+	qWarning("Window3D Created.");
 }
 
 Window3D::~Window3D()
 {
+	qWarning("Window3D Destroyed.");
 }
 
 void Window3D::updateWindow3D()
