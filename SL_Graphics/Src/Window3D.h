@@ -4,7 +4,6 @@
 #include <QMouseEvent>
 #include <QKeyEvent>
 
-
 class Window3D : public Qt3DExtras::Qt3DWindow
 {
 public:
@@ -12,10 +11,11 @@ public:
 	~Window3D();
 
 	void updateWindow3D();
+
 	//Get
+
 	//Set
 	void setBackgroundColor(QColor color);
-
 
 protected:
 	// inherited from QWindow.
@@ -23,5 +23,4 @@ protected:
 	void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 	void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 	void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
-
 };

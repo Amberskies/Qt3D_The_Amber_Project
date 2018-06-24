@@ -3,9 +3,9 @@
 #include <vector>
 #include <algorithm>
 
-/*******************************************************************************
- * Static Helper Structs
- ******************************************************************************/
+/***************************************
+Static Helper Structs
+ ***************************************/
 template <typename T>
 struct InputInstance : std::pair<T, Input::InputState>
 {
@@ -33,9 +33,9 @@ static QPoint sg_mouseCurrPosition;
 static QPoint sg_mousePrevPosition;
 static QPoint sg_mouseDelta;
 
-/*******************************************************************************
- * Static Helper Fucntions
- ******************************************************************************/
+/***************************************
+Static Helper Fucntions
+ ***************************************/
 static inline KeyContainer::iterator FindKey(Qt::Key value)
 {
   return std::find(sg_keyInstances.begin(), sg_keyInstances.end(), value);
@@ -85,9 +85,9 @@ static inline void Update(Container &container)
   std::for_each(container.begin(), container.end(), &UpdateStates<TPair>);
 }
 
-/*******************************************************************************
- * Input Implementation
- ******************************************************************************/
+/***************************************
+  Input Implementation
+ ***************************************/
 Input::InputState Input::keyState(Qt::Key k)
 {
   KeyContainer::iterator it = FindKey(k);
@@ -163,5 +163,3 @@ void Input::reset()
   sg_keyInstances.clear();
   sg_buttonInstances.clear();
 }
-
-

@@ -1,7 +1,6 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-
 #include <Qt>
 #include <QPoint>
 
@@ -33,7 +32,6 @@ public:
   static QPoint mouseDelta();
 
 private:
-
   // State updating
   static void update();
   static void registerKeyPress(int key);
@@ -41,6 +39,7 @@ private:
   static void registerMousePress(Qt::MouseButton button);
   static void registerMouseRelease(Qt::MouseButton button);
   static void reset();
+  // this enables our window to update User Input.
   friend class Window3D;
 };
 

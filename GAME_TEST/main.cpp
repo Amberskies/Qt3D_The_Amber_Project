@@ -22,3 +22,11 @@ int main(int argc, char *argv[])
 	system("PAUSE");
 	return exitCode;
 }
+
+/* Notes 
+Basic Setup to show and close a window complete.
+
+********************************************
+TODO:
+	...
+*/

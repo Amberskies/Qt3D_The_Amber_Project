@@ -4,7 +4,7 @@
 Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent)
 {
-	qWarning("Window3D Created.");
+	qWarning("Window3D Created : User Input events setup");
 }
 
 Window3D::~Window3D()
@@ -14,6 +14,7 @@ Window3D::~Window3D()
 
 void Window3D::updateWindow3D()
 {
+	// updates the user input for this window.
 	Input::update();
 }
 
