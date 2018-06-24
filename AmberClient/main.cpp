@@ -28,6 +28,15 @@ AssetManager:
 
 ***************************************
 TODO: 
+
+	Worked out the size of such a project
+	ITS MASSIVE - so......
+	its time to split everything up into small chunks.
+
+	- how to use AssetManager in an ECS system
+	- considerations for memory management. 
+	- as m_assets now contains a list of assets + files required, how to
+	use this info efficiently.
 	
 
 */
