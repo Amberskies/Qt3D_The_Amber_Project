@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <Window3D.h>
 
+#include "GameTest.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,8 +12,11 @@ int main(int argc, char *argv[])
 
 	w.setBackgroundColor(QColor(Qt::black));
 
+	GameTest game(w);
+	game.Go();
+
 	//start the main event loop ie signals and slots + Input etc.
-	// use quit() to stop the event loop
+	// use the quit() slot or exit() to stop the event loop
 	int exitCode = a.exec();
 
 	system("PAUSE");
