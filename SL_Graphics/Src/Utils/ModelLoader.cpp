@@ -20,9 +20,10 @@ Qt3DExtras::QTextureMaterial * ModelLoader::Texture(QString file)
 	return textureMaterial;
 }
 
-Qt3DExtras::QPhongMaterial * ModelLoader::Material(QColor diffuse)
+Qt3DExtras::QDiffuseSpecularMaterial * ModelLoader::Material(QColor diffuse)
 {
-	Qt3DExtras::QPhongMaterial *newMaterial = new Qt3DExtras::QPhongMaterial();
+	Qt3DExtras::QDiffuseSpecularMaterial *newMaterial = 
+		new Qt3DExtras::QDiffuseSpecularMaterial();
 	newMaterial->setDiffuse(diffuse);
 	return newMaterial;
 }

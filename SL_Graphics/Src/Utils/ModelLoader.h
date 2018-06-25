@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QMesh>
-#include <QPhongMaterial>
+#include <QDiffuseSpecularMaterial>
 #include <QTextureMaterial>
 
 class ModelLoader
@@ -9,6 +9,6 @@ class ModelLoader
 public:
 	static Qt3DRender::QMesh* LoadMesh(QString file);
 	static Qt3DExtras::QTextureMaterial* Texture(QString file);
-	static Qt3DExtras::QPhongMaterial* Material(QColor diffuse);
+	static Qt3DExtras::QDiffuseSpecularMaterial* Material(QColor diffuse);
 };
 

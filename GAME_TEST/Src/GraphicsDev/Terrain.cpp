@@ -1,6 +1,6 @@
 #include "Terrain.h"
 #include <QTransform>
-#include <QPhongMaterial>
+#include <QDiffuseSpecularMaterial>
 #include <QPlaneMesh>
 
 Terrain::Terrain(QEntity *root)
@@ -8,10 +8,12 @@ Terrain::Terrain(QEntity *root)
 	, m_terrain(new QEntity(m_rootEntity))
 {
 	Qt3DExtras::QPlaneMesh *TerrainMesh = new Qt3DExtras::QPlaneMesh();
-
-	Qt3DExtras::QPhongMaterial *TerrainMaterial = new Qt3DExtras::QPhongMaterial();
+	TerrainMesh->setMeshResolution(QSize(2, 2));
+	
+	Qt3DExtras::QDiffuseSpecularMaterial *TerrainMaterial = 
+		new Qt3DExtras::QDiffuseSpecularMaterial();
 	TerrainMaterial->setDiffuse(QColor(QRgb(0xff9929)));
-
+	
 	Qt3DCore::QTransform *terrainPosition = new Qt3DCore::QTransform();
 	terrainPosition->setTranslation({ 0.0f, 0.0f, -1.0f });
 	terrainPosition->setRotationX(90.0f);
