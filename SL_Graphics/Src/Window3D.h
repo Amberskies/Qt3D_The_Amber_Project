@@ -1,5 +1,6 @@
 #pragma once
 #include <Qt3DWindow>
+#include <QEntity>
 #include <QForwardRenderer>
 #include <QMouseEvent>
 #include <QKeyEvent>
@@ -13,7 +14,7 @@ public:
 	void updateWindow3D();
 
 	//Get
-
+	Qt3DCore::QEntity* getWindowRootEntity();
 	//Set
 	void setBackgroundColor(QColor color);
 
@@ -23,4 +24,7 @@ protected:
 	void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 	void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 	void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+
+private:
+	Qt3DCore::QEntity *m_WindowRootEntity = nullptr;
 };

@@ -18,6 +18,10 @@ private slots:
 	void MainGameLoop();
 
 private:
+	void Test();
+	void CleanUpAfterTest();
+
 	Window3D & m_window3D;
 	QTimer m_timer;
+	int m_gameState = 1;
 };

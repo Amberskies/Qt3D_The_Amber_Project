@@ -4,24 +4,33 @@
     <Filter Include="Src">
       <UniqueIdentifier>{c82836a6-f774-4c99-b917-bfe9c2505acc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Utils">
+      <UniqueIdentifier>{e052b188-e573-4255-a19c-7ac4521685fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
     <ClInclude Include="sl_graphics_global.h" />
-    <ClInclude Include="Src\Input.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Window3D.h">
       <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\Input.h">
+      <Filter>Src\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\ModelLoader.h">
+      <Filter>Src\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SL_Graphics.cpp" />
-    <ClCompile Include="Src\Input.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Window3D.cpp">
       <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utils\Input.cpp">
+      <Filter>Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utils\ModelLoader.cpp">
+      <Filter>Src\Utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

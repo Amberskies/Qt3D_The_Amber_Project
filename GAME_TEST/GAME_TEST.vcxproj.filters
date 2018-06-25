@@ -4,16 +4,27 @@
     <Filter Include="Src">
       <UniqueIdentifier>{4d462947-9042-4043-b895-70402cdac9c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\GraphicsDev">
+      <UniqueIdentifier>{aaeb412e-1ec1-4dab-b101-eee8e706a474}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="GameTest.cpp">
+    <ClCompile Include="Src\GameTest.cpp">
       <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Terrain.cpp">
+      <Filter>Src\GraphicsDev</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="GameTest.h">
+    <QtMoc Include="Src\GameTest.h">
       <Filter>Src</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\GraphicsDev\Terrain.h">
+      <Filter>Src\GraphicsDev</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

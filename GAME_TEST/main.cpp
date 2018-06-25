@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <Window3D.h>
 
-#include "GameTest.h"
+#include "src/GameTest.h"
 
 int main(int argc, char *argv[])
 {
