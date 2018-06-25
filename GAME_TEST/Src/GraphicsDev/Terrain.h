@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QEntity>
-#include <QPlaneMesh>
 
 class Terrain : public Qt3DCore::QEntity
 {
@@ -10,12 +9,12 @@ public:
 	 ~Terrain();
 
 	//Get
-	Qt3DExtras::QPlaneMesh * getPlane();
+	Qt3DCore::QEntity * getTerrain();
 
 	//Set
 
 private:
 	QEntity * m_rootEntity = nullptr;
-	QEntity * m_plane = nullptr;
-	Qt3DExtras::QPlaneMesh * m_planeMesh = nullptr;
+	QEntity * m_terrain = nullptr;
+
 };

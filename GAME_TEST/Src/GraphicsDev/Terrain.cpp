@@ -1,22 +1,36 @@
 #include "Terrain.h"
+#include <QTransform>
+#include <QPhongMaterial>
+#include <QPlaneMesh>
 
 Terrain::Terrain(QEntity *root)
 	: m_rootEntity(root)
-	, m_plane     (new QEntity(m_rootEntity))
-	, m_planeMesh (new Qt3DExtras::QPlaneMesh())
+	, m_terrain(new QEntity(m_rootEntity))
 {
+	Qt3DExtras::QPlaneMesh *TerrainMesh = new Qt3DExtras::QPlaneMesh();
+
+	Qt3DExtras::QPhongMaterial *TerrainMaterial = new Qt3DExtras::QPhongMaterial();
+	TerrainMaterial->setDiffuse(QColor(QRgb(0xff9929)));
+
+	Qt3DCore::QTransform *terrainPosition = new Qt3DCore::QTransform();
+	terrainPosition->setTranslation({ 0.0f, 0.0f, -1.0f });
+	terrainPosition->setRotationX(90.0f);
+
+	// Terrain
+	m_terrain->addComponent(TerrainMesh);
+	m_terrain->addComponent(TerrainMaterial);
+	m_terrain->addComponent(terrainPosition);
+
 	qWarning("Terrain Entity Created");
 }
 
 Terrain::~Terrain()
 {
-	delete m_plane;
+	delete m_terrain;
 	qWarning("Terrain destroyed");
 }
 
-Qt3DExtras::QPlaneMesh * Terrain::getPlane()
+Qt3DCore::QEntity * Terrain::getTerrain()
 {
-	m_planeMesh->setWidth(0.5f);
-	m_planeMesh->setHeight(0.5f);
-	return m_planeMesh;
+	return m_terrain;
 }

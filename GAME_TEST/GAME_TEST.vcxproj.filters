@@ -7,6 +7,9 @@
     <Filter Include="Src\GraphicsDev">
       <UniqueIdentifier>{aaeb412e-1ec1-4dab-b101-eee8e706a474}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Lighting">
+      <UniqueIdentifier>{25526f63-4ff0-4dd5-910c-7908268df204}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -15,6 +18,9 @@
     </ClCompile>
     <ClCompile Include="Src\GraphicsDev\Terrain.cpp">
       <Filter>Src\GraphicsDev</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Lighting\TheSun.cpp">
+      <Filter>Src\Lighting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -25,6 +31,9 @@
   <ItemGroup>
     <ClInclude Include="Src\GraphicsDev\Terrain.h">
       <Filter>Src\GraphicsDev</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Lighting\TheSun.h">
+      <Filter>Src\Lighting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

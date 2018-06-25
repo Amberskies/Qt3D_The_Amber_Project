@@ -101,12 +101,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\GameTest.cpp" />
     <ClCompile Include="Src\GraphicsDev\Terrain.cpp" />
+    <ClCompile Include="Src\Lighting\TheSun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GraphicsDev\Terrain.h" />
+    <ClInclude Include="Src\Lighting\TheSun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

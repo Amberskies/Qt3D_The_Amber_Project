@@ -1,6 +1,7 @@
 #pragma once
 #include <Qt3DWindow>
 #include <QEntity>
+#include <QCamera>
 #include <QForwardRenderer>
 #include <QMouseEvent>
 #include <QKeyEvent>
