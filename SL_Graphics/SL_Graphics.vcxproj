@@ -94,15 +94,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SL_Graphics.cpp" />
+    <ClCompile Include="Src\Camera3D.cpp" />
     <ClCompile Include="Src\Utils\Input.cpp" />
     <ClCompile Include="Src\Utils\ModelLoader.cpp" />
+    <ClCompile Include="Src\Utils\Transform3D.cpp" />
     <ClCompile Include="Src\Window3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
     <ClInclude Include="sl_graphics_global.h" />
+    <ClInclude Include="Src\Camera3D.h" />
     <ClInclude Include="Src\Utils\Input.h" />
     <ClInclude Include="Src\Utils\ModelLoader.h" />
+    <ClInclude Include="Src\Utils\Transform3D.h" />
     <ClInclude Include="Src\Window3D.h" />
   </ItemGroup>
   <ItemGroup>

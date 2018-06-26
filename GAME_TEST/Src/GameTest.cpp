@@ -12,7 +12,10 @@ GameTest::GameTest(Window3D& window3D)
 
 GameTest::~GameTest()
 {
+	// Clean up the test mess****************************************
 	CleanUpAfterTest();
+	//***************************************************************
+
 	// Stops the Qt3D Engine
 	m_window3D.setRootEntity(nullptr);
 	qWarning("TestGame destroyed.");
@@ -22,7 +25,11 @@ void GameTest::Go()
 {
 	// Start The Qt3D Engine
 	m_window3D.setRootEntity(m_window3D.getWindowRootEntity());
+
+	// set up Test values*******************************************
 	Test();
+	//**************************************************************
+
 	// start the Main Game Loop event timer.
 	m_timer.start(10);
 }
@@ -49,6 +56,10 @@ void GameTest::MainGameLoop()
 			// Update user input to the Window
 			m_window3D.updateWindow3D();
 			if (Input::keyPressed(Qt::Key_Escape)) m_gameState =2;
+
+			// Try out some game stuff.*********************************************
+			TestGameLoop();
+			//**********************************************************************
 		}
 		else if (m_gameState == 2)
 		{
@@ -99,6 +110,14 @@ void GameTest::Test()
 	g_terrain = new Terrain(rootEntity);
 //********************************************************************************
 	qWarning("Test End");
+}
+
+#include "Src/User_Input/MoveFirstPersonASWD3D.h"
+Move3D g_move;
+
+void GameTest::TestGameLoop()
+{
+	g_move.UpdateMove3D(m_window3D);
 }
 
 void GameTest::CleanUpAfterTest()

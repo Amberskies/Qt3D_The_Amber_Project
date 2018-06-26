@@ -20,6 +20,12 @@
     <ClInclude Include="Src\Utils\ModelLoader.h">
       <Filter>Src\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Utils\Transform3D.h">
+      <Filter>Src\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Camera3D.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SL_Graphics.cpp" />
@@ -31,6 +37,12 @@
     </ClCompile>
     <ClCompile Include="Src\Utils\ModelLoader.cpp">
       <Filter>Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utils\Transform3D.cpp">
+      <Filter>Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Camera3D.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

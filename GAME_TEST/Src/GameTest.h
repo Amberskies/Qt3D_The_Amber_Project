@@ -19,6 +19,7 @@ private slots:
 
 private:
 	void Test();
+	void TestGameLoop();
 	void CleanUpAfterTest();
 
 	Window3D & m_window3D;

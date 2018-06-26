@@ -102,6 +102,8 @@
     <ClCompile Include="Src\GameTest.cpp" />
     <ClCompile Include="Src\GraphicsDev\Terrain.cpp" />
     <ClCompile Include="Src\Lighting\TheSun.cpp" />
+    <ClCompile Include="Src\User_Input\FollowMouse2.5D.cpp" />
+    <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h" />
@@ -109,6 +111,8 @@
   <ItemGroup>
     <ClInclude Include="Src\GraphicsDev\Terrain.h" />
     <ClInclude Include="Src\Lighting\TheSun.h" />
+    <ClInclude Include="Src\User_Input\FollowMouse2.5D.h" />
+    <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

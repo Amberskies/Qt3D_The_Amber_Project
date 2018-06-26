@@ -15,6 +15,9 @@
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
       <ParseFiles>true</ParseFiles>
     </Filter>
+    <Filter Include="Src\User Input">
+      <UniqueIdentifier>{fcbe2840-a06e-4ee7-91a7-09e76d48c8be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -26,6 +29,12 @@
     </ClCompile>
     <ClCompile Include="Src\Lighting\TheSun.cpp">
       <Filter>Src\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\User_Input\FollowMouse2.5D.cpp">
+      <Filter>Src\User Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp">
+      <Filter>Src\User Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +48,12 @@
     </ClInclude>
     <ClInclude Include="Src\Lighting\TheSun.h">
       <Filter>Src\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\User_Input\FollowMouse2.5D.h">
+      <Filter>Src\User Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h">
+      <Filter>Src\User Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
