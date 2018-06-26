@@ -13,25 +13,29 @@ Move3D::~Move3D()
 
 void Move3D::UpdateMove3D(Window3D &win)
 {
+	static const float transSpeed = 0.05f;
+	static const float rotSpeed = 0.1f;
+
 	// Camera Transformation
 	if (Input::buttonPressed(Qt::RightButton))
 	{
-		static const float transSpeed = 0.5f;
-		static const float rotSpeed = 0.5f;
-
 		// Handle rotations
-		m_camera.rotate(-rotSpeed * Input::mouseDelta().x(), Camera3D::LocalUp);
-		m_camera.rotate(-rotSpeed * Input::mouseDelta().y(), m_camera.right());
+		float dx = Input::mouseDelta().x();
+		float dy = Input::mouseDelta().y();
 
+		//qDebug() <<
+			win.camera()->pan(Input::mouseDelta().x() * rotSpeed);
+			win.camera()->tilt(Input::mouseDelta().y() * -rotSpeed);
+	}
 		// Handle translations
 		QVector3D translation;
 		if (Input::keyPressed(Qt::Key_W))
 		{
-			translation += m_camera.forward();
+			translation -= m_camera.forward();
 		}
 		if (Input::keyPressed(Qt::Key_S))
 		{
-			translation -= m_camera.forward();
+			translation += m_camera.forward();
 		}
 		if (Input::keyPressed(Qt::Key_A))
 		{
@@ -49,9 +53,8 @@ void Move3D::UpdateMove3D(Window3D &win)
 		{
 			translation += m_camera.up();
 		}
-		m_camera.translate(transSpeed * translation);
-	}
-
-	// Update instance information
-	//m_transform.rotate(1.0f, QVector3D(0.4f, 0.3f, 0.3f));
+	Qt3DRender::QCamera::CameraTranslationOption cto = Qt3DRender::QCamera::TranslateViewCenter;
+  //Qt3DRender::QCamera::CameraTranslationOption cto = Qt3DRender::QCamera::DontTranslateViewCenter;
+	
+	win.camera()->translate(transSpeed * translation, cto);
 }
