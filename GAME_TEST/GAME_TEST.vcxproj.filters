@@ -18,6 +18,12 @@
     <Filter Include="Src\User Input">
       <UniqueIdentifier>{fcbe2840-a06e-4ee7-91a7-09e76d48c8be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\GraphicsDev\Gui">
+      <UniqueIdentifier>{25c024ad-33b6-432b-8fa0-96b066b1915a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\GraphicsDev\Gui\FPS_Component">
+      <UniqueIdentifier>{2e4180c8-7af8-4003-882c-a7c3aa3f1557}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -36,10 +42,37 @@
     <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp">
       <Filter>Src\User Input</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp">
+      <Filter>Src\GraphicsDev\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.cpp">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.cpp">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.cpp">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.cpp">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.cpp">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Gui\GuiLayer.cpp">
+      <Filter>Src\GraphicsDev\Gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h">
       <Filter>Src</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.h">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.h">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +87,21 @@
     </ClInclude>
     <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h">
       <Filter>Src\User Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\Gui\FPS.h">
+      <Filter>Src\GraphicsDev\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.h">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.h">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.h">
+      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\Gui\GuiLayer.h">
+      <Filter>Src\GraphicsDev\Gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
