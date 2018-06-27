@@ -1,27 +1,24 @@
 #include "Terrain.h"
-#include <QTransform>
 #include <QDiffuseSpecularMaterial>
 #include <QPlaneMesh>
+#include <QTextureMaterial>
+#include <QTransform>
+#include <Utils/ModelLoader.h>
 
 Terrain::Terrain(QEntity *root)
-	: m_rootEntity(root)
-	, m_terrain(new QEntity(m_rootEntity))
+	: QEntity(root)
+	, m_rootEntity(root)
 {
-	Qt3DExtras::QPlaneMesh *TerrainMesh = new Qt3DExtras::QPlaneMesh();
-	TerrainMesh->setMeshResolution(QSize(2, 2));
-	
-	Qt3DExtras::QDiffuseSpecularMaterial *TerrainMaterial = 
-		new Qt3DExtras::QDiffuseSpecularMaterial();
-	TerrainMaterial->setDiffuse(QColor(QRgb(0xff9929)));
-	
-	Qt3DCore::QTransform *terrainPosition = new Qt3DCore::QTransform();
-	terrainPosition->setTranslation({ 0.0f, 0.0f, -1.0f });
-	terrainPosition->setRotationX(90.0f);
+	Qt3DRender::QMesh *TerrainMesh = ModelLoader::LoadMesh("../Assets/Maps/BaseTile.obj");
+	Qt3DExtras::QTextureMaterial *TerrainMaterial = ModelLoader::Texture("../Assets/res/grassy2.png");
 
-	// Terrain
-	m_terrain->addComponent(TerrainMesh);
-	m_terrain->addComponent(TerrainMaterial);
-	m_terrain->addComponent(terrainPosition);
+			m_terrain = new Qt3DCore::QEntity(m_rootEntity);
+			Qt3DCore::QTransform *TerrainTransform = new Qt3DCore::QTransform();
+			TerrainTransform->setTranslation(QVector3D(0.0f , 0.0f, 0.0f ));
+
+			m_terrain->addComponent(TerrainMesh);
+			m_terrain->addComponent(TerrainMaterial);
+			m_terrain->addComponent(TerrainTransform);
 
 	qWarning("Terrain Entity Created");
 }
@@ -34,5 +31,5 @@ Terrain::~Terrain()
 
 Qt3DCore::QEntity * Terrain::getTerrain()
 {
-	return m_terrain;
+	return this;
 }

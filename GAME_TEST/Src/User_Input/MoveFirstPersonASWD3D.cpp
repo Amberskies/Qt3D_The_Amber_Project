@@ -3,7 +3,7 @@
 
 Move3D::Move3D()
 {
-	// Empty
+	
 }
 
 Move3D::~Move3D()
@@ -13,6 +13,11 @@ Move3D::~Move3D()
 
 void Move3D::UpdateMove3D(Window3D &win)
 {
+	m_cam = win.camera();
+	const QVector3D LocalForward(0.0f, 0.0f, -1.0f);
+	const QVector3D LocalUp(0.0f, 1.0f, 0.0f);
+	const QVector3D LocalRight(1.0f, 0.0f, 0.0f);
+
 	static const float transSpeed = 0.05f;
 	static const float rotSpeed = 0.1f;
 
@@ -28,33 +33,38 @@ void Move3D::UpdateMove3D(Window3D &win)
 			win.camera()->tilt(Input::mouseDelta().y() * -rotSpeed);
 	}
 		// Handle translations
-		QVector3D translation;
-		if (Input::keyPressed(Qt::Key_W))
-		{
-			translation -= m_camera.forward();
-		}
-		if (Input::keyPressed(Qt::Key_S))
-		{
-			translation += m_camera.forward();
-		}
-		if (Input::keyPressed(Qt::Key_A))
-		{
-			translation -= m_camera.right();
-		}
-		if (Input::keyPressed(Qt::Key_D))
-		{
-			translation += m_camera.right();
-		}
-		if (Input::keyPressed(Qt::Key_Q))
-		{
-			translation -= m_camera.up();
-		}
-		if (Input::keyPressed(Qt::Key_E))
-		{
-			translation += m_camera.up();
-		}
-	Qt3DRender::QCamera::CameraTranslationOption cto = Qt3DRender::QCamera::TranslateViewCenter;
-  //Qt3DRender::QCamera::CameraTranslationOption cto = Qt3DRender::QCamera::DontTranslateViewCenter;
+	//QQuaternion cr = m_cam->
+
+		/*QVector3D translation;
+		QVector3D localForward = (m_cam->rotation()).rotatedVector(LocalForward);
+		QVector3D localRight = m_cam->rotation().rotatedVector(LocalRight);*/
+
+	//	if (Input::keyPressed(Qt::Key_W))
+	//	{
+	//		translation += ;
+	//	}
+	//	if (Input::keyPressed(Qt::Key_S))
+	//	{
+	//		translation;
+	//	}
+	//	if (Input::keyPressed(Qt::Key_A))
+	//	{
+	//		translation;
+	//	}
+	//	if (Input::keyPressed(Qt::Key_D))
+	//	{
+	//		translation;
+	//	}
+	//	if (Input::keyPressed(Qt::Key_Q))
+	//	{
+	//		translation;
+	//	}
+	//	if (Input::keyPressed(Qt::Key_E))
+	//	{
+	//		translation;
+	//	}
+	//Qt3DRender::QCamera::CameraTranslationOption cto = Qt3DRender::QCamera::TranslateViewCenter;
+    //Qt3DRender::QCamera::CameraTranslationOption cto = Qt3DRender::QCamera::DontTranslateViewCenter;
 	
-	win.camera()->translate(transSpeed * translation, cto);
+	//win.camera()->translate(transSpeed * translation, cto);
 }

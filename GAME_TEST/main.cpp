@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	// use the quit() slot or exit() to stop the event loop
 	int exitCode = a.exec();
 
-	system("PAUSE");
+	//system("PAUSE");
 	return exitCode;
 }
 
@@ -34,8 +34,16 @@ so...
 	 the 2.5D movement is only usefull when viewing to the SouthEast = +x, +z
 		it will also need to be expanded for other viewpoints
 so.. we have all we need now to continue and test a Terrain.
+
+Terrain :
+	base textured 5x5 flat plain created for tiling.
+	Terrain File added
+	PlayerFile added
+	
+
 ********************************************
 TODO:
+	Revisit 3D Movement now.
 	... Lets get on with Terrain
 	This will lead into better Asset Management
 	and aiming for an Atlas of Maps - ooer - (a full Planet maybe ?????)

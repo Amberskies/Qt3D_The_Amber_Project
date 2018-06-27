@@ -13,7 +13,7 @@ TheSun::TheSun(QEntity * root)
 	m_theSun->addComponent(light);
 
 	Qt3DCore::QTransform *lightTransform = new Qt3DCore::QTransform();
-	lightTransform->setTranslation(QVector3D(0.0f, 1.0f, 1.0f));
+	lightTransform->setTranslation(QVector3D(0.0f, 50.0f, 1.0f));
 	m_theSun->addComponent(lightTransform);
 
 	qWarning("The Sun Has come out - it's sooo Nice!");

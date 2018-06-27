@@ -14,9 +14,9 @@ Window3D::Window3D(QScreen *parent)
 	Qt3DRender::QCamera *cameraEntity = this->camera();
 
 	cameraEntity->lens()->setPerspectiveProjection(45.0f, 16.0f / 9.0f, 0.1f, 100.0f);
-	cameraEntity->setPosition(QVector3D(0.0f, 0.0f, 0.0f));
+	cameraEntity->setPosition(QVector3D(0.0f, 5.0f, -10.0f));
 	cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
-	cameraEntity->setViewCenter(QVector3D(0.0f, 0.0f, -1.0f));
+	cameraEntity->setViewCenter(QVector3D(0.0f, 0.5f, 0.5f));
 	qWarning("Window3D Created : User Input events setup");
 	qWarning("Camera setup : position(0,0,0) looking at -Z into the screen.");
 }

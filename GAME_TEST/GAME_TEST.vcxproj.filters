@@ -42,9 +42,6 @@
     <ClCompile Include="Src\User_Input\FollowMouse2.5D.cpp">
       <Filter>Src\User Input</Filter>
     </ClCompile>
-    <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp">
-      <Filter>Src\User Input</Filter>
-    </ClCompile>
     <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp">
       <Filter>Src\GraphicsDev\Gui</Filter>
     </ClCompile>
@@ -72,6 +69,15 @@
     <ClCompile Include="Src\GraphicsDev\Gui\GuiLayer.cpp">
       <Filter>Src\Trash</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\Player.cpp">
+      <Filter>Src\GraphicsDev</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp">
+      <Filter>Src\Trash</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\User_Input\FollowPlayer3D.cpp">
+      <Filter>Src\User Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h">
@@ -83,6 +89,9 @@
     <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.h">
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
     </QtMoc>
+    <QtMoc Include="Src\GraphicsDev\Player.h">
+      <Filter>Src\GraphicsDev</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GraphicsDev\Terrain.h">
@@ -92,9 +101,6 @@
       <Filter>Src\Lighting</Filter>
     </ClInclude>
     <ClInclude Include="Src\User_Input\FollowMouse2.5D.h">
-      <Filter>Src\User Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h">
       <Filter>Src\User Input</Filter>
     </ClInclude>
     <ClInclude Include="Src\GraphicsDev\Gui\FPS.h">
@@ -117,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="Src\GraphicsDev\Gui\GuiLayer.h">
       <Filter>Src\Trash</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h">
+      <Filter>Src\Trash</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\User_Input\FollowPlayer3D.h">
+      <Filter>Src\User Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

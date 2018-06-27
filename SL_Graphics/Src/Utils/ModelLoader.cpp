@@ -15,6 +15,8 @@ Qt3DExtras::QTextureMaterial * ModelLoader::Texture(QString file)
 	Qt3DRender::QTextureImage *tex = new Qt3DRender::QTextureImage();
 	tex->setSource(QUrl::fromLocalFile(file));
 	texture->addTextureImage(tex);
+	Qt3DRender::QTextureWrapMode twm(Qt3DRender::QTextureWrapMode::MirroredRepeat);
+	texture->setWrapMode(twm);
 	Qt3DExtras::QTextureMaterial *textureMaterial = new Qt3DExtras::QTextureMaterial();
 	textureMaterial->setTexture(texture);
 	return textureMaterial;

@@ -87,8 +87,11 @@ void GameTest::MainGameLoop()
 #include "Src/Lighting/TheSun.h"
 TheSun *g_sunshine = nullptr;
 #include "Src/GraphicsDev/Terrain.h"
-Terrain *g_terrain = nullptr;
-
+Terrain *g_terraintile = nullptr;
+#include "Src/GraphicsDev/Player.h"
+Player * g_player = nullptr;
+#include "Src/User_Input/FollowPlayer3D.h"
+FollowPlayer3D *g_camOnPlayer;
 void GameTest::Test()
 {
 	qWarning("Test Start");
@@ -101,15 +104,14 @@ void GameTest::Test()
 	g_sunshine = new TheSun(rootEntity);
 //********************************************************************************
 // TERRAIN************************************************************************
-	g_terrain = new Terrain(rootEntity);
+	g_terraintile = new Terrain(rootEntity);
+// Player*************************************************************************
+	g_player = new Player(rootEntity);
+	g_camOnPlayer = new FollowPlayer3D(m_window3D.camera(), g_player);
 //********************************************************************************
 	
 	qWarning("Test End");
 }
-
-
-#include "Src/User_Input/MoveFirstPersonASWD3D.h"
-Move3D g_move;
 
 #include "Src/GraphicsDev/Gui/FPS.h"
 int g_counter = 0;
@@ -125,7 +127,7 @@ void GameTest::TestGameLoop()
 		g_needFPS = false;
 	}
 
-	g_move.UpdateMove3D(m_window3D);
+	g_camOnPlayer->updateFollowPlayer3D();
 
 	g_counter++;
 	if (g_counter >= 100)
@@ -141,6 +143,6 @@ void GameTest::TestGameLoop()
 
 void GameTest::CleanUpAfterTest()
 {
-	delete g_terrain;
+	delete g_terraintile;
 	delete g_sunshine;
 }
