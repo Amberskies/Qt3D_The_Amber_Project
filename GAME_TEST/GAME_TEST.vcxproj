@@ -98,6 +98,8 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\SL_Graphics\Src\Camera3D.cpp" />
+    <ClCompile Include="..\SL_Graphics\Src\Utils\Transform3D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\GameTest.cpp" />
     <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp" />
@@ -116,6 +118,8 @@
     <QtMoc Include="Src\GameTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\SL_Graphics\Src\Camera3D.h" />
+    <ClInclude Include="..\SL_Graphics\Src\Utils\Transform3D.h" />
     <ClInclude Include="Src\GraphicsDev\Gui\FPS.h" />
     <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.h">
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>

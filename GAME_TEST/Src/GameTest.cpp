@@ -97,18 +97,13 @@ void GameTest::Test()
 // Root entity********************************************************************
 	Qt3DCore::QEntity *rootEntity = m_window3D.getWindowRootEntity();
 
-//*********************************************************************************
-// Camera****Moved to Window3D*****************************************************
-
-	
-
 //********************************************************************************
-// *******************************************************************************
 	g_sunshine = new TheSun(rootEntity);
 //********************************************************************************
 // TERRAIN************************************************************************
 	g_terrain = new Terrain(rootEntity);
 //********************************************************************************
+	
 	qWarning("Test End");
 }
 
@@ -119,8 +114,6 @@ Move3D g_move;
 #include "Src/GraphicsDev/Gui/FPS.h"
 int g_counter = 0;
 FPS *g_fps = nullptr;
-#include "Src/GraphicsDev/Gui/GuiLayer.h"
-GuiLayer *g_guiLayer = nullptr;
 bool g_needFPS = true;
 
 void GameTest::TestGameLoop()
@@ -129,7 +122,6 @@ void GameTest::TestGameLoop()
 	if (g_needFPS)
 	{
 		g_fps = new FPS(m_window3D.getWindowRootEntity());
-		g_guiLayer = new GuiLayer(m_window3D.getWindowRootEntity());
 		g_needFPS = false;
 	}
 
@@ -141,12 +133,6 @@ void GameTest::TestGameLoop()
 		QString f = QString::number((int)g_fps->getFps());
 		f = "Your FPS =  " + f + "    ";
 		m_window3D.setTitle(f);
-
-		/*QVector3D pos = m_window3D.camera()->position();
-		pos.setX(pos.x());
-		pos.setY(pos.y());
-		pos.setZ(pos.z() - 1.0f);
-		g_guiLayer->setText(f, pos);*/
 
 		g_counter = 0;
 	}

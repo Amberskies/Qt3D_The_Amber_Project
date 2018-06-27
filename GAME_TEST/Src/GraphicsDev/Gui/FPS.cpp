@@ -1,7 +1,5 @@
 #include "FPS.h"
 
-
-
 FPS::FPS(QEntity * parent)
 	: QEntity(parent)
 {
