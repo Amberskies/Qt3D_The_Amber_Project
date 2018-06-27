@@ -39,7 +39,7 @@ Terrain :
 	base textured 5x5 flat plain created for tiling.
 	Terrain File added
 	PlayerFile added
-	
+	Camera sorted out at last - its FollowPlayer3D inside UserInput area.
 
 ********************************************
 TODO:

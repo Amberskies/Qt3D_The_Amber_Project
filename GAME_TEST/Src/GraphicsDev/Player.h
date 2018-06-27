@@ -15,10 +15,13 @@ public:
     explicit Player(Qt3DCore::QEntity *rootEntity);
     virtual ~Player();
 
+	void updatePlayer();
+
 	// getters
     Qt3DCore::QEntity *getPlayerEntity();
 	Player * getPlayer();
 	QVector3D getPlayerPosition();
+	float getRotY();
 
 	//setters
 	void setPlayerPosition(QVector3D playerPosition);

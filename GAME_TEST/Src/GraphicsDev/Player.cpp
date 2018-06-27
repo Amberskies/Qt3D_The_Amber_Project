@@ -2,14 +2,16 @@
 
 #include <QTransform>
 #include <QMesh>
-#include <QDiffuseSpecularMaterial> 
+#include <QDiffuseSpecularMaterial>
+#include <QTextureMaterial>
 #include <Utils/ModelLoader.h>
+#include <Utils/Input.h>
 
 Player::Player(Qt3DCore::QEntity *rootEntity) :
     m_rootEntity(rootEntity)
 {
-    Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Player/Player1.ply");
-	Qt3DExtras::QDiffuseSpecularMaterial *testMaterial = ModelLoader::Material(QColor(QRgb(0xDD10EE)));
+    Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Player/Person.obj");
+	Qt3DExtras::QTextureMaterial *testMaterial = ModelLoader::Texture("../Assets/Player/playerTexture.png");
 
     Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
     testTransform->setTranslation(QVector3D(0.0f, 0.5f, 0.5f));
@@ -25,6 +27,11 @@ Player::Player(Qt3DCore::QEntity *rootEntity) :
 Player::~Player()
 {
     qWarning("Player Shutdown");
+}
+
+void Player::updatePlayer()
+{
+
 }
 
 Qt3DCore::QEntity *Player::getPlayerEntity()
@@ -45,6 +52,17 @@ QVector3D Player::getPlayerPosition()
 	playerVector = m_player->components();
 	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
 	return playerTransform->translation();
+}
+
+float Player::getRotY()
+{
+	Qt3DCore::QComponentVector playerVector;
+	Qt3DCore::QTransform *playerTransform;
+
+	playerVector = m_player->components();
+	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
+
+	return playerTransform->rotationY();
 }
 
 void Player::setPlayerPosition(QVector3D playerPosition)
