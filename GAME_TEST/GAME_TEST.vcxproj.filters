@@ -89,9 +89,6 @@
     <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.h">
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
     </QtMoc>
-    <QtMoc Include="Src\GraphicsDev\Player.h">
-      <Filter>Src\GraphicsDev</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\GraphicsDev\Terrain.h">
@@ -129,6 +126,9 @@
     </ClInclude>
     <ClInclude Include="Src\User_Input\FollowPlayer3D.h">
       <Filter>Src\User Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\Player.h">
+      <Filter>Src\GraphicsDev</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

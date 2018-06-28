@@ -27,12 +27,15 @@ void GameTest::Go()
 	m_window3D.setRootEntity(m_window3D.getWindowRootEntity());
 
 	// set up Test values*******************************************
+	m_frameTime.start();
 	Test();
 	//**************************************************************
 
 	// start the Main Game Loop event timer.
 	m_timer.start(10);
 }
+
+
 
 void GameTest::MainGameLoop()
 {
@@ -92,6 +95,7 @@ Terrain *g_terraintile = nullptr;
 Player * g_player = nullptr;
 #include "Src/User_Input/FollowPlayer3D.h"
 FollowPlayer3D *g_camOnPlayer;
+
 void GameTest::Test()
 {
 	qWarning("Test Start");
@@ -110,7 +114,7 @@ void GameTest::Test()
 	g_camOnPlayer = new FollowPlayer3D(m_window3D.camera(), g_player);
 //********************************************************************************
 	
-	qWarning("Test End");
+	qWarning("Test End : Next will be The TestGameLoop.");
 }
 
 #include "Src/GraphicsDev/Gui/FPS.h"
@@ -139,10 +143,17 @@ void GameTest::TestGameLoop()
 		g_counter = 0;
 	}
 
+	m_deltaTime = ((float) m_frameTime.elapsed()) / 1000.0f;
+	g_player->setDeltaTime(m_deltaTime);
+	g_player->updatePlayer();
+	m_frameTime.restart();
 }
 
 void GameTest::CleanUpAfterTest()
 {
+	delete g_camOnPlayer;
+	delete g_fps;
+	delete g_player;
 	delete g_terraintile;
 	delete g_sunshine;
 }

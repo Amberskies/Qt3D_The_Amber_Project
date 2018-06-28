@@ -41,6 +41,11 @@ Terrain :
 	PlayerFile added
 	Camera sorted out at last - its FollowPlayer3D inside UserInput area.
 
+Movement: 
+	files are setup
+	just the last part of the algorithm to calculate for the camera side
+	i think it will then work well with the player movement.
+
 ********************************************
 TODO:
 	Revisit 3D Movement now.

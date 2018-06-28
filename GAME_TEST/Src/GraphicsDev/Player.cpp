@@ -1,77 +1,85 @@
 #include "Player.h"
 
-#include <QTransform>
-#include <QMesh>
-#include <QDiffuseSpecularMaterial>
-#include <QTextureMaterial>
-#include <Utils/ModelLoader.h>
 #include <Utils/Input.h>
+#include <Utils/ModelLoader.h>
+#include <QDiffuseSpecularMaterial>
+#include <QMesh>
+#include <QTextureMaterial>
+#include <QtMath>
 
-Player::Player(Qt3DCore::QEntity *rootEntity) :
-    m_rootEntity(rootEntity)
-{
-    Qt3DRender::QMesh *testMesh = ModelLoader::LoadMesh("../Assets/Player/Person.obj");
-	Qt3DExtras::QTextureMaterial *testMaterial = ModelLoader::Texture("../Assets/Player/playerTexture.png");
+Player::Player(QEntity *rootEntity) 
+	: QEntity(rootEntity)
+	, m_deltaTime(0.0f)
+    , m_runSpeed(100.0f)
+    , m_turnSpeed(100.0f)
+    , m_currentSpeed(0.0f)
+    , m_currentTurnSpeed(0.0f) {
+  Qt3DRender::QMesh *testMesh =
+      ModelLoader::LoadMesh("../Assets/Player/Person.obj");
+  Qt3DExtras::QTextureMaterial *testMaterial =
+      ModelLoader::Texture("../Assets/Player/playerTexture.png");
 
-    Qt3DCore::QTransform *testTransform = new Qt3DCore::QTransform();
-    testTransform->setTranslation(QVector3D(0.0f, 0.5f, 0.5f));
+  m_playerTransform = new Qt3DCore::QTransform();
+  m_playerTransform->setTranslation(QVector3D(0.0f, 0.5f, 0.5f));
 
-    m_player = new Qt3DCore::QEntity(m_rootEntity);
-    m_player->addComponent(testMesh);
-    m_player->addComponent(testMaterial);
-    m_player->addComponent(testTransform);
+  //this = new Qt3DCore::QEntity(m_rootEntity);
+  this->addComponent(testMesh);
+  this->addComponent(testMaterial);
+  this->addComponent(m_playerTransform);
 
-	qWarning("Player Created");
+  qWarning("Player Created");
 }
 
-Player::~Player()
-{
-    qWarning("Player Shutdown");
+Player::~Player() { qWarning("Player Shutdown"); }
+
+void Player::updatePlayer() {
+  if (Input::keyPressed(Qt::Key_W)) {
+	  qDebug() << "W has been pressed";
+    m_currentSpeed = m_runSpeed;
+  } else if (Input::keyPressed(Qt::Key_S)) {
+    m_currentSpeed = -m_runSpeed;
+
+  } else {
+    m_currentSpeed = 0.0f;
+  }
+
+  if (Input::keyPressed(Qt::Key_A)) {
+    m_currentTurnSpeed = -m_turnSpeed;
+  } else if (Input::keyPressed(Qt::Key_D)) {
+    m_currentTurnSpeed = m_turnSpeed;
+
+  } else {
+    m_currentTurnSpeed = 0.0f;
+  }
+
+  m_playerTransform->setRotationY(m_currentTurnSpeed * m_deltaTime);
+
+  float distance = m_currentSpeed * m_deltaTime;
+  float dx = distance * qSin(qDegreesToRadians(this->getRotY()));
+  float dz = distance * qCos(qDegreesToRadians(this->getRotZ()));
+
+  QVector3D currentTranslation = m_playerTransform->translation();
+  m_playerTransform->setTranslation(QVector3D(
+      currentTranslation.x() + (dx * m_deltaTime), currentTranslation.y(),
+      currentTranslation.z() + (dz * m_deltaTime)));
 }
 
-void Player::updatePlayer()
-{
+// ************Getters***********************
 
+Player *Player::getPlayer() { return this; }
+
+QVector3D Player::getPlayerPosition() {
+  return m_playerTransform->translation();
 }
 
-Qt3DCore::QEntity *Player::getPlayerEntity()
-{
-    return m_player;
+float Player::getRotY() { return m_playerTransform->rotationY(); }
+
+float Player::getRotZ() { return m_playerTransform->rotationZ(); }
+
+// **************Setters************************
+
+void Player::setPlayerPosition(QVector3D playerPosition) {
+  m_playerTransform->setTranslation(playerPosition);
 }
 
-Player * Player::getPlayer()
-{
-	return this;
-}
-
-QVector3D Player::getPlayerPosition()
-{
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DCore::QTransform *playerTransform;
-	
-	playerVector = m_player->components();
-	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
-	return playerTransform->translation();
-}
-
-float Player::getRotY()
-{
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DCore::QTransform *playerTransform;
-
-	playerVector = m_player->components();
-	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
-
-	return playerTransform->rotationY();
-}
-
-void Player::setPlayerPosition(QVector3D playerPosition)
-{
-	Qt3DCore::QComponentVector playerVector;
-	Qt3DCore::QTransform *playerTransform;
-
-	playerVector = m_player->components();
-	playerTransform = qobject_cast<Qt3DCore::QTransform *>(playerVector.at(2));
-	playerTransform->setTranslation(playerPosition);
-}
-
+void Player::setDeltaTime(float dt) { m_deltaTime = dt; }
