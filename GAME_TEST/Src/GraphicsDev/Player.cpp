@@ -11,7 +11,7 @@ Player::Player(QEntity *rootEntity)
 	: QEntity(rootEntity)
 	, m_deltaTime(0.0f)
     , m_runSpeed(100.0f)
-    , m_turnSpeed(100.0f)
+    , m_turnSpeed(-100.0f)
     , m_currentSpeed(0.0f)
     , m_currentTurnSpeed(0.0f) {
   Qt3DRender::QMesh *testMesh =
@@ -22,7 +22,6 @@ Player::Player(QEntity *rootEntity)
   m_playerTransform = new Qt3DCore::QTransform();
   m_playerTransform->setTranslation(QVector3D(0.0f, 0.5f, 0.5f));
 
-  //this = new Qt3DCore::QEntity(m_rootEntity);
   this->addComponent(testMesh);
   this->addComponent(testMaterial);
   this->addComponent(m_playerTransform);
@@ -34,7 +33,6 @@ Player::~Player() { qWarning("Player Shutdown"); }
 
 void Player::updatePlayer() {
   if (Input::keyPressed(Qt::Key_W)) {
-	  qDebug() << "W has been pressed";
     m_currentSpeed = m_runSpeed;
   } else if (Input::keyPressed(Qt::Key_S)) {
     m_currentSpeed = -m_runSpeed;
@@ -52,11 +50,12 @@ void Player::updatePlayer() {
     m_currentTurnSpeed = 0.0f;
   }
 
-  m_playerTransform->setRotationY(m_currentTurnSpeed * m_deltaTime);
+  m_playerTransform->setRotationY( m_playerTransform->rotationY() +
+	  (m_currentTurnSpeed * m_deltaTime));
 
   float distance = m_currentSpeed * m_deltaTime;
-  float dx = distance * qSin(qDegreesToRadians(this->getRotY()));
-  float dz = distance * qCos(qDegreesToRadians(this->getRotZ()));
+  float dx = distance * qSin(qDegreesToRadians(m_playerTransform->rotationY()));
+  float dz = distance * qCos(qDegreesToRadians(m_playerTransform->rotationY()));
 
   QVector3D currentTranslation = m_playerTransform->translation();
   m_playerTransform->setTranslation(QVector3D(

@@ -1,25 +1,30 @@
 #include "FollowPlayer3D.h"
+
 #include <Utils/Input.h>
 #include <QtMath>
 
+
 FollowPlayer3D::FollowPlayer3D(QCamera * WindowsCam, Player * player)
-	: m_camera(WindowsCam)
+	: m_cameraEntity(WindowsCam)
 	, m_player(player)
 {
-	m_playerPos = m_player->getPlayerPosition();
-	m_cameraPos = m_camera->position();
+	m_cameraPos = QVector3D(2.0f, 2.0f, 2.5f);
 
-	m_pitch = 20.0f;
+	m_cameraEntity->lens()->setPerspectiveProjection(45.0f, 16.0f / 9.0f, 0.1f, 100.0f);
+	m_cameraEntity->setPosition(m_cameraPos);
+	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
+	m_cameraEntity->setViewCenter(m_player->getPlayerPosition());
+
+	m_pitch = 45.0f;
 	m_yaw = 0.0f;
 	m_roll = 0.0f;
-	m_distanceFromPlayer = (player->getPlayerPosition()).distanceToPoint(m_camera->position());
-	m_angleAroundPlayer = 0;
+	m_distanceFromPlayer = m_cameraPos.distanceToPoint(m_player->getPlayerPosition());
+	qDebug() << "camerPos : " << m_cameraPos << "    Player Distance = " << m_distanceFromPlayer;
+	m_angleAroundPlayer = 45;
 }
 
 void FollowPlayer3D::updateFollowPlayer3D()
 {
-	
-
 	if (Input::keyPressed(Qt::Key_Q)) m_distanceFromPlayer -= 0.05f;
 	if (Input::keyPressed(Qt::Key_E)) m_distanceFromPlayer += 0.05f;
 
@@ -32,33 +37,18 @@ void FollowPlayer3D::updateFollowPlayer3D()
 		m_angleAroundPlayer -= angleChange;
 	}
 	
-	float horizontalDistance = calculateHorizontalDistance();
-	float verticalDistance = calculateVerticalDistance();
-	calculateCameraPosition(horizontalDistance, verticalDistance);
+	float hDist = m_distanceFromPlayer * qCos(qDegreesToRadians(m_pitch));
+	float vDist = m_distanceFromPlayer * qSin(qDegreesToRadians(m_pitch));
 
-}
-
-float FollowPlayer3D::calculateHorizontalDistance()
-{
-	return m_distanceFromPlayer * qCos(qDegreesToRadians(m_pitch));
-}
-
-float FollowPlayer3D::calculateVerticalDistance()
-{
-	return m_distanceFromPlayer * qSin(qDegreesToRadians(m_pitch));
-	;
-}
-
-void FollowPlayer3D::calculateCameraPosition(float hDist, float vDist)
-{
+	m_playerPos = m_player->getPlayerPosition();
 	float theta = m_player->getRotY() + m_angleAroundPlayer;
 	float offsetX = hDist * qSin(qDegreesToRadians(theta));
 	float offsetZ = hDist * qCos(qDegreesToRadians(theta));
 
 	m_cameraPos.setX(m_playerPos.x() - offsetX);
-	m_cameraPos.setY(m_playerPos.y()+ vDist);
+	m_cameraPos.setY(m_playerPos.y() + vDist);
 	m_cameraPos.setZ(m_playerPos.z() - offsetZ);
-	
-	m_camera->setPosition(m_cameraPos);
-	m_camera->setViewCenter(m_playerPos);
+
+	m_cameraEntity->setPosition(m_cameraPos);
+	m_cameraEntity->setViewCenter(m_player->getPlayerPosition());
 }

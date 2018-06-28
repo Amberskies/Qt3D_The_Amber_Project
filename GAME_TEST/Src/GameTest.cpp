@@ -35,8 +35,6 @@ void GameTest::Go()
 	m_timer.start(10);
 }
 
-
-
 void GameTest::MainGameLoop()
 {
 	m_timer.stop();
@@ -131,7 +129,6 @@ void GameTest::TestGameLoop()
 		g_needFPS = false;
 	}
 
-	g_camOnPlayer->updateFollowPlayer3D();
 
 	g_counter++;
 	if (g_counter >= 100)
@@ -143,9 +140,14 @@ void GameTest::TestGameLoop()
 		g_counter = 0;
 	}
 
+
 	m_deltaTime = ((float) m_frameTime.elapsed()) / 1000.0f;
+
 	g_player->setDeltaTime(m_deltaTime);
 	g_player->updatePlayer();
+
+	g_camOnPlayer->updateFollowPlayer3D();
+
 	m_frameTime.restart();
 }
 

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <QCamera>
+#include <QVector3D>
+
 #include "Src/GraphicsDev/Player.h"
 
 class FollowPlayer3D : public Qt3DRender::QCamera
@@ -11,12 +13,7 @@ public:
 	void updateFollowPlayer3D();
 
 private:
-	float calculateHorizontalDistance();
-	float calculateVerticalDistance();
-	void calculateCameraPosition(float hDist, float vDist);
-
-private:
-	QCamera * m_camera = nullptr;
+	QCamera * m_cameraEntity = nullptr;
 	Player * m_player = nullptr;
 	QVector3D m_playerPos;
 	QVector3D m_cameraPos;
