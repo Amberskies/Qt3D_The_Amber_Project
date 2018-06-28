@@ -45,12 +45,21 @@ Movement:
 	files are setup
 	just the last part of the algorithm to calculate for the camera side
 	i think it will then work well with the player movement.
+	- sorted :
+		I have Left it in a very basic format on purpose
+		as anything to do with movement will allways need to be altered later
+		usualy at the part in the design phase when the animations are known.
 
 ********************************************
 TODO:
-	Revisit 3D Movement now.
-	... Lets get on with Terrain
+
+	time to get us a nice big area with trees on - just to get a feel for things.
+
+	Refactor out all the new files to Static Libs.
+
+	
+
 	This will lead into better Asset Management
 	and aiming for an Atlas of Maps - ooer - (a full Planet maybe ?????)
-	- well they did say aim hight and enjoy whatever results - smiles.
+	- well they did say aim hieght and enjoy whatever results - smiles.
 */
