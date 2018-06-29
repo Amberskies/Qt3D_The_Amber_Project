@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	Window3D w;
 	w.show();
 
-	w.setBackgroundColor(QColor(Qt::black));
+	w.setBackgroundColor(QColor(QRgb(0xD100908)));
 
 	GameTest game(w);
 	game.Go();
@@ -23,7 +23,8 @@ int main(int argc, char *argv[])
 	return exitCode;
 }
 
-/* Notes 
+/* Notes ***********  https://github.com/Amberskies/Qt3D_The_Amber_Project ****
+
 Basic Setup to show and close a window complete.
 created a Camera3D and added a Transform3D class to SL_Graphics
 - silly me made the OpenGL version - oh well - i'll leave them for later perhaps.

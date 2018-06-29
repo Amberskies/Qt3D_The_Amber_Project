@@ -8,7 +8,7 @@ TheSun::TheSun(QEntity * root)
 	, m_theSun(new QEntity(m_rootEntity))
 {
 	Qt3DRender::QPointLight *light = new Qt3DRender::QPointLight();
-	light->setColor("white");
+	light->setColor(QColor(QColor(QRgb(0xD100908))));
 	light->setIntensity(0.8f);
 	m_theSun->addComponent(light);
 

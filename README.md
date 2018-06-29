@@ -7,5 +7,5 @@ Long Term Game Project useing Qt3D  in VS2017 with the Qt VS Tools
 check the Client_Dev1 for development updates.
 
 Release 1 : a very basic Static Lib created useing QT3D
-  Try it out and have fun - basic Gammes can easily be evolved from this code.
+  Try it out and have fun - basic Games can easily be evolved from this code.
   

@@ -20,8 +20,13 @@ FollowPlayer3D::FollowPlayer3D(QCamera * WindowsCam, Player * player)
 	m_roll = 0.0f;
 	m_distanceFromPlayer = 5.0f;
 	//m_distanceFromPlayer = m_cameraPos.distanceToPoint(m_player->getPlayerPosition());
-	qDebug() << "camerPos : " << m_cameraPos << "    Player Distance = " << m_distanceFromPlayer;
 	m_angleAroundPlayer =180;
+	qWarning("Camera following player created.");
+}
+
+FollowPlayer3D::~FollowPlayer3D()
+{
+	// Empty
 }
 
 void FollowPlayer3D::updateFollowPlayer3D()

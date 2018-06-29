@@ -9,6 +9,7 @@ class FollowPlayer3D : public Qt3DRender::QCamera
 {
 public:
 	FollowPlayer3D(QCamera *WindowsCam = nullptr, Player *player = nullptr);
+	virtual ~FollowPlayer3D();
 
 	void updateFollowPlayer3D();
 
