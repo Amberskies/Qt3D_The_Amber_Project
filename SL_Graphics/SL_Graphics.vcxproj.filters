@@ -20,6 +20,9 @@
     <ClInclude Include="Src\Utils\ModelLoader.h">
       <Filter>Src\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Src\WorldManager.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SL_Graphics.cpp" />
@@ -31,6 +34,9 @@
     </ClCompile>
     <ClCompile Include="Src\Utils\ModelLoader.cpp">
       <Filter>Src\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\WorldManager.cpp">
+      <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

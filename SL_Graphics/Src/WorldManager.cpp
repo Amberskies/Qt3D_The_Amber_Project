@@ -9,12 +9,13 @@ WorldManager::WorldManager(Window3D& window3D, QEntity *parent)
 	m_player = new Player(m_win.getWindowRootEntity());
 	m_camOnPlayer = new FollowPlayer3D(m_win.camera(), m_player);
 	m_frameTime.start();
+	qWarning("WorldManager Built");
 }
 
 WorldManager::~WorldManager()
 {
 	delete m_camOnPlayer;
-	delete m_player;
+	//delete m_player;
 	delete m_terraintile;
 	delete m_sunshine;
 }

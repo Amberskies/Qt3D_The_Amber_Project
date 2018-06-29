@@ -3,6 +3,7 @@
 
 GameTest::GameTest(Window3D& window3D)
 	: m_window3D(window3D)
+	, m_worldManager(new WorldManager(m_window3D, m_window3D.getWindowRootEntity()))
 {
 	// connect the Main Game Loop to a timer.
 	connect(&m_timer, SIGNAL(timeout()), this, SLOT(MainGameLoop()));
@@ -15,7 +16,7 @@ GameTest::~GameTest()
 	// Clean up the test mess****************************************
 	CleanUpAfterTest();
 	//***************************************************************
-
+	delete m_worldManager;
 	// Stops the Qt3D Engine
 	m_window3D.setRootEntity(nullptr);
 	qWarning("TestGame destroyed.");
@@ -27,8 +28,8 @@ void GameTest::Go()
 	m_window3D.setRootEntity(m_window3D.getWindowRootEntity());
 
 	// set up Test values*******************************************
-	m_frameTime.start();
-	Test();
+	//m_frameTime.start();
+	//Test();
 	//**************************************************************
 
 	// start the Main Game Loop event timer.
@@ -56,6 +57,9 @@ void GameTest::MainGameLoop()
 		{
 			// Update user input to the Window
 			m_window3D.updateWindow3D();
+			m_worldManager->updateWorld();
+
+
 			if (Input::keyPressed(Qt::Key_Escape)) m_gameState =2;
 
 			// Try out some game stuff.*********************************************
@@ -83,37 +87,6 @@ void GameTest::MainGameLoop()
 // ************************************
 // *********** Test Area **************
 //*************************************
-#include <QCamera>
-
-#include "Src/Lighting/TheSun.h"
-TheSun *g_sunshine = nullptr;
-#include "Src/GraphicsDev/Terrain.h"
-Terrain *g_terraintile = nullptr;
-#include "Src/GraphicsDev/Player.h"
-Player * g_player = nullptr;
-#include "Src/User_Input/FollowPlayer3D.h"
-FollowPlayer3D *g_camOnPlayer;
-
-void GameTest::Test()
-{
-	qWarning("Test Start");
-
-//********************************************************************************
-// Root entity********************************************************************
-	Qt3DCore::QEntity *rootEntity = m_window3D.getWindowRootEntity();
-
-//********************************************************************************
-	g_sunshine = new TheSun(rootEntity);
-//********************************************************************************
-// TERRAIN************************************************************************
-	g_terraintile = new Terrain(rootEntity);
-// Player*************************************************************************
-	g_player = new Player(rootEntity);
-	g_camOnPlayer = new FollowPlayer3D(m_window3D.camera(), g_player);
-//********************************************************************************
-	
-	qWarning("Test End : Next will be The TestGameLoop.");
-}
 
 #include "Src/GraphicsDev/Gui/FPS.h"
 int g_counter = 0;
@@ -140,22 +113,9 @@ void GameTest::TestGameLoop()
 		g_counter = 0;
 	}
 
-
-	m_deltaTime = ((float) m_frameTime.elapsed()) / 1000.0f;
-
-	g_player->setDeltaTime(m_deltaTime);
-	g_player->updatePlayer();
-
-	g_camOnPlayer->updateFollowPlayer3D();
-
-	m_frameTime.restart();
 }
 
 void GameTest::CleanUpAfterTest()
 {
-	delete g_camOnPlayer;
 	delete g_fps;
-	delete g_player;
-	delete g_terraintile;
-	delete g_sunshine;
 }

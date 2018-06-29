@@ -8,19 +8,20 @@ FollowPlayer3D::FollowPlayer3D(QCamera * WindowsCam, Player * player)
 	: m_cameraEntity(WindowsCam)
 	, m_player(player)
 {
-	m_cameraPos = QVector3D(2.0f, 2.0f, 2.5f);
+	//m_cameraPos = QVector3D(0.0f, 0.0f, 0.0f);
 
 	m_cameraEntity->lens()->setPerspectiveProjection(45.0f, 16.0f / 9.0f, 0.1f, 100.0f);
 	m_cameraEntity->setPosition(m_cameraPos);
 	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
 	m_cameraEntity->setViewCenter(m_player->getPlayerPosition());
 
-	m_pitch = 45.0f;
+	m_pitch = 15.0f;
 	m_yaw = 0.0f;
 	m_roll = 0.0f;
-	m_distanceFromPlayer = m_cameraPos.distanceToPoint(m_player->getPlayerPosition());
+	m_distanceFromPlayer = 5.0f;
+	//m_distanceFromPlayer = m_cameraPos.distanceToPoint(m_player->getPlayerPosition());
 	qDebug() << "camerPos : " << m_cameraPos << "    Player Distance = " << m_distanceFromPlayer;
-	m_angleAroundPlayer = 45;
+	m_angleAroundPlayer =180;
 }
 
 void FollowPlayer3D::updateFollowPlayer3D()

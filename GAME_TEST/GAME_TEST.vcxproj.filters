@@ -24,9 +24,6 @@
     <Filter Include="Src\GraphicsDev\Gui\FPS_Component">
       <UniqueIdentifier>{2e4180c8-7af8-4003-882c-a7c3aa3f1557}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Trash">
-      <UniqueIdentifier>{44548895-5361-4531-b330-0a6d762b4b10}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -60,20 +57,8 @@
     <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.cpp">
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
     </ClCompile>
-    <ClCompile Include="..\SL_Graphics\Src\Utils\Transform3D.cpp">
-      <Filter>Src\Trash</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SL_Graphics\Src\Camera3D.cpp">
-      <Filter>Src\Trash</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\GuiLayer.cpp">
-      <Filter>Src\Trash</Filter>
-    </ClCompile>
     <ClCompile Include="Src\GraphicsDev\Player.cpp">
       <Filter>Src\GraphicsDev</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp">
-      <Filter>Src\Trash</Filter>
     </ClCompile>
     <ClCompile Include="Src\User_Input\FollowPlayer3D.cpp">
       <Filter>Src\User Input</Filter>
@@ -111,18 +96,6 @@
     </ClInclude>
     <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.h">
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SL_Graphics\Src\Utils\Transform3D.h">
-      <Filter>Src\Trash</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SL_Graphics\Src\Camera3D.h">
-      <Filter>Src\Trash</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GraphicsDev\Gui\GuiLayer.h">
-      <Filter>Src\Trash</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h">
-      <Filter>Src\Trash</Filter>
     </ClInclude>
     <ClInclude Include="Src\User_Input\FollowPlayer3D.h">
       <Filter>Src\User Input</Filter>

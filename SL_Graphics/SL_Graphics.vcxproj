@@ -97,6 +97,7 @@
     <ClCompile Include="Src\Utils\Input.cpp" />
     <ClCompile Include="Src\Utils\ModelLoader.cpp" />
     <ClCompile Include="Src\Window3D.cpp" />
+    <ClCompile Include="Src\WorldManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
@@ -104,6 +105,7 @@
     <ClInclude Include="Src\Utils\Input.h" />
     <ClInclude Include="Src\Utils\ModelLoader.h" />
     <ClInclude Include="Src\Window3D.h" />
+    <ClInclude Include="Src\WorldManager.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

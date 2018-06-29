@@ -3,7 +3,7 @@
 #include <QCamera>
 #include <QVector3D>
 
-#include "Src/GraphicsDev/Player.h"
+#include "../GAME_TEST/Src/GraphicsDev/Player.h"
 
 class FollowPlayer3D : public Qt3DRender::QCamera
 {

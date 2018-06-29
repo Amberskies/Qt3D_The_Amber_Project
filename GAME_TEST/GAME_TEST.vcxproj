@@ -98,8 +98,6 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\SL_Graphics\Src\Camera3D.cpp" />
-    <ClCompile Include="..\SL_Graphics\Src\Utils\Transform3D.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\GameTest.cpp" />
     <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp" />
@@ -108,20 +106,16 @@
     <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.cpp" />
     <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.cpp" />
     <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\GuiLayer.cpp" />
     <ClCompile Include="Src\GraphicsDev\Player.cpp" />
     <ClCompile Include="Src\GraphicsDev\Terrain.cpp" />
     <ClCompile Include="Src\Lighting\TheSun.cpp" />
     <ClCompile Include="Src\User_Input\FollowMouse2.5D.cpp" />
     <ClCompile Include="Src\User_Input\FollowPlayer3D.cpp" />
-    <ClCompile Include="Src\User_Input\MoveFirstPersonASWD3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\SL_Graphics\Src\Camera3D.h" />
-    <ClInclude Include="..\SL_Graphics\Src\Utils\Transform3D.h" />
     <ClInclude Include="Src\GraphicsDev\Gui\FPS.h" />
     <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.h">
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
@@ -134,7 +128,6 @@
     <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.h" />
     <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.h" />
     <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.h" />
-    <ClInclude Include="Src\GraphicsDev\Gui\GuiLayer.h" />
     <ClInclude Include="Src\GraphicsDev\Player.h">
       <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
       <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_NO_WARNING_OUTPUT;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
@@ -143,7 +136,6 @@
     <ClInclude Include="Src\Lighting\TheSun.h" />
     <ClInclude Include="Src\User_Input\FollowMouse2.5D.h" />
     <ClInclude Include="Src\User_Input\FollowPlayer3D.h" />
-    <ClInclude Include="Src\User_Input\MoveFirstPersonASWD3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

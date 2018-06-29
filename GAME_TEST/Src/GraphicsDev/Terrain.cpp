@@ -9,7 +9,7 @@ Terrain::Terrain(QEntity *root)
 	: QEntity(root)
 	, m_rootEntity(root)
 {
-	Qt3DRender::QMesh *TerrainMesh = ModelLoader::LoadMesh("../Assets/Maps/BaseTile.obj");
+	Qt3DRender::QMesh *TerrainMesh = ModelLoader::LoadMesh("../Assets/Maps/BaseTile10x10.obj");
 	Qt3DExtras::QTextureMaterial *TerrainMaterial = ModelLoader::Texture("../Assets/res/grassy2.png");
 
 			m_terrain = new Qt3DCore::QEntity(m_rootEntity);
