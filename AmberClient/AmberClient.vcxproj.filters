@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Src\Core">
+      <UniqueIdentifier>{b99ef475-7bcb-46ee-baf1-1eca661f53b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\GameWorld">
+      <UniqueIdentifier>{ccbab422-fb86-49d1-bdcf-a972f585df3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Physx">
+      <UniqueIdentifier>{dd9a4b4b-8157-4352-a6e8-aceb0a661e23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Rendering">
+      <UniqueIdentifier>{2289f015-d753-4bd6-b291-371ced5f5a6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Network">
+      <UniqueIdentifier>{c6e9c595-5e95-40e2-9960-1497b4779535}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Input.cpp">
+      <Filter>Src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\ModelLoader.cpp">
+      <Filter>Src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Map.cpp">
+      <Filter>Src\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameWorld\Player.cpp">
+      <Filter>Src\GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Physx\MovePlayer.cpp">
+      <Filter>Src\Physx</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Graphics.cpp">
+      <Filter>Src\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rendering\Window3D.cpp">
+      <Filter>Src\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Network\NetworkManager.cpp">
+      <Filter>Src\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\AssetManager.cpp">
+      <Filter>Src\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\Game.h">
+      <Filter>Src</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Map.h">
+      <Filter>Src\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\GameWorld\Player.h">
+      <Filter>Src\GameWorld</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Rendering\Window3D.h">
+      <Filter>Src\Rendering</Filter>
+    </QtMoc>
+    <QtMoc Include="src\Network\NetworkManager.h">
+      <Filter>Src\Network</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\Input.h">
+      <Filter>Src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\ModelLoader.h">
+      <Filter>Src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Physx\MovePlayer.h">
+      <Filter>Src\Physx</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rendering\Graphics.h">
+      <Filter>Src\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\AssetManager.h">
+      <Filter>Src\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

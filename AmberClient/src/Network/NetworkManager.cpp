@@ -1,6 +1,6 @@
-#include "ServerUDP.h"
+#include "NetworkManager.h"
 
-ServerUDP::ServerUDP(QObject *parent)
+NetworkManager::NetworkManager(QObject *parent)
 	: QObject(parent)
 {
 	// create a QUDP socket
@@ -10,20 +10,21 @@ ServerUDP::ServerUDP(QObject *parent)
 	// to bind to an address and port using bind()
 	// bool QAbstractSocket::bind(const QHostAddress & address, 
 	//     quint16 port = 0, BindMode mode = DefaultForPlatform)
-	socket->bind(QHostAddress::LocalHost, 44250);
+	socket->bind(QHostAddress("192.168.0.100"), 44250);
 
 	connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
-ServerUDP::~ServerUDP()
+NetworkManager::~NetworkManager()
 {
 	delete socket;
 }
 
-void ServerUDP::Test()
+void NetworkManager::Test()
 {
 	QByteArray Data;
-	Data.append("Amber Server is now Running.");
+	Data.append("99");
+	qWarning("Logging on.");
 
 	// Sends the datagram datagram 
 	// to the host address and at port.
@@ -32,7 +33,7 @@ void ServerUDP::Test()
 	socket->writeDatagram(Data, QHostAddress::LocalHost, 44250);
 }
 
-void ServerUDP::readyRead()
+void NetworkManager::readyRead()
 {
 	// when data comes in
 	QByteArray buffer;
@@ -48,20 +49,8 @@ void ServerUDP::readyRead()
 	// (unless the pointers are 0).
 
 	socket->readDatagram(buffer.data(), buffer.size(), &sender, &senderPort);
-	int account = buffer.toInt();
-	if (account == 99)
-	{
-		qDebug() << "Message from: " << sender.toString();
-		qDebug() << "Message port: " << senderPort;
-		qDebug() << "Message: " << buffer << " :Admin Logged on.";
-	}
-	else
-	{
-		qDebug() << "Message from: " << sender.toString();
-		qDebug() << "Message port: " << senderPort;
-		qDebug() << "Message: " << buffer;
-	}
+
+	qDebug() << "Message from: " << sender.toString();
+	qDebug() << "Message port: " << senderPort;
+	qDebug() << "Message: " << buffer;
 }
-
-
-

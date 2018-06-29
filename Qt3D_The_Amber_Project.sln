@@ -7,6 +7,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Basic_UDP_Server_Framework"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Basic_Framework", "Basic_Framework\Basic_Framework.vcxproj", "{5153AC9C-4651-45DF-9547-E01015BF37D5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AmberClient", "AmberClient\AmberClient.vcxproj", "{201704FC-A47D-4E7B-9527-740C67DF5BF9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B12702AD-ABFB-343A-A199-8E24837244A3} = {B12702AD-ABFB-343A-A199-8E24837244A3}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME_TEST", "GAME_TEST\GAME_TEST.vcxproj", "{B7395DCF-3B4A-4F24-B79D-41A4CA30A623}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F} = {9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SL_Graphics", "SL_Graphics\SL_Graphics.vcxproj", "{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +33,18 @@ Global
 		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Debug|x64.Build.0 = Debug|x64
 		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Release|x64.ActiveCfg = Release|x64
 		{5153AC9C-4651-45DF-9547-E01015BF37D5}.Release|x64.Build.0 = Release|x64
+		{201704FC-A47D-4E7B-9527-740C67DF5BF9}.Debug|x64.ActiveCfg = Debug|x64
+		{201704FC-A47D-4E7B-9527-740C67DF5BF9}.Debug|x64.Build.0 = Debug|x64
+		{201704FC-A47D-4E7B-9527-740C67DF5BF9}.Release|x64.ActiveCfg = Release|x64
+		{201704FC-A47D-4E7B-9527-740C67DF5BF9}.Release|x64.Build.0 = Release|x64
+		{B7395DCF-3B4A-4F24-B79D-41A4CA30A623}.Debug|x64.ActiveCfg = Debug|x64
+		{B7395DCF-3B4A-4F24-B79D-41A4CA30A623}.Debug|x64.Build.0 = Debug|x64
+		{B7395DCF-3B4A-4F24-B79D-41A4CA30A623}.Release|x64.ActiveCfg = Release|x64
+		{B7395DCF-3B4A-4F24-B79D-41A4CA30A623}.Release|x64.Build.0 = Release|x64
+		{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}.Debug|x64.ActiveCfg = Debug|x64
+		{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}.Debug|x64.Build.0 = Debug|x64
+		{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}.Release|x64.ActiveCfg = Release|x64
+		{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,13 @@
+###############################
+# Text File for AssetManagement
+# in Development by AmberClient
+#
+# Format:
+# int id QString Name QString Mesh QString Material
+# use a space between items, nothing else
+#
+#
+0 Player ../Assets/Player/Player1.ply ../Assets/Player/Player1.png
+1 Map1 ../Assets/Maps/BigBaseTile30x30.obj ../Assets/Maps/grass.png
+
+

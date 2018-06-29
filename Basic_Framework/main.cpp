@@ -21,5 +21,12 @@ Basic framwork setup
 
 ***************************************
 TODO: 
+	Basic Client Log on recognition test use Acount 99 as Admin log on
+
+	AssetManager:
+		- read/write a formated textFile(later MySQL or Both)
+		- load assets specified in text file
+		- show example on screen (temporary test)
+		- ??? think about Maps ???
 
 */
