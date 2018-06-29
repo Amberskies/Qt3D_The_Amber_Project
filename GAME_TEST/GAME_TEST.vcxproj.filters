@@ -7,17 +7,6 @@
     <Filter Include="Src\GraphicsDev">
       <UniqueIdentifier>{aaeb412e-1ec1-4dab-b101-eee8e706a474}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Lighting">
-      <UniqueIdentifier>{25526f63-4ff0-4dd5-910c-7908268df204}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-      <ParseFiles>true</ParseFiles>
-    </Filter>
-    <Filter Include="Src\User Input">
-      <UniqueIdentifier>{fcbe2840-a06e-4ee7-91a7-09e76d48c8be}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Src\GraphicsDev\Gui">
       <UniqueIdentifier>{25c024ad-33b6-432b-8fa0-96b066b1915a}</UniqueIdentifier>
     </Filter>
@@ -29,15 +18,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\GameTest.cpp">
       <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Terrain.cpp">
-      <Filter>Src\GraphicsDev</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Lighting\TheSun.cpp">
-      <Filter>Src\Lighting</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\User_Input\FollowMouse2.5D.cpp">
-      <Filter>Src\User Input</Filter>
     </ClCompile>
     <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp">
       <Filter>Src\GraphicsDev\Gui</Filter>
@@ -57,12 +37,6 @@
     <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.cpp">
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
     </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Player.cpp">
-      <Filter>Src\GraphicsDev</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\User_Input\FollowPlayer3D.cpp">
-      <Filter>Src\User Input</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h">
@@ -76,15 +50,6 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\GraphicsDev\Terrain.h">
-      <Filter>Src\GraphicsDev</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Lighting\TheSun.h">
-      <Filter>Src\Lighting</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\User_Input\FollowMouse2.5D.h">
-      <Filter>Src\User Input</Filter>
-    </ClInclude>
     <ClInclude Include="Src\GraphicsDev\Gui\FPS.h">
       <Filter>Src\GraphicsDev\Gui</Filter>
     </ClInclude>
@@ -96,12 +61,6 @@
     </ClInclude>
     <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.h">
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\User_Input\FollowPlayer3D.h">
-      <Filter>Src\User Input</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GraphicsDev\Player.h">
-      <Filter>Src\GraphicsDev</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

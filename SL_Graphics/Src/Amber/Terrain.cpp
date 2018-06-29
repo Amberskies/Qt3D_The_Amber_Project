@@ -3,7 +3,7 @@
 #include <QPlaneMesh>
 #include <QTextureMaterial>
 #include <QTransform>
-#include <Utils/ModelLoader.h>
+#include <Src/Utils/ModelLoader.h>
 
 Terrain::Terrain(QEntity *root)
 	: QEntity(root)

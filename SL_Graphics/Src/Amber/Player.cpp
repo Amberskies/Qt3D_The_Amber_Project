@@ -1,7 +1,7 @@
 #include "Player.h"
 
-#include <Utils/Input.h>
-#include <Utils/ModelLoader.h>
+#include <Src/Utils/Input.h>
+#include <Src/Utils/ModelLoader.h>
 #include <QDiffuseSpecularMaterial>
 #include <QMesh>
 #include <QTextureMaterial>

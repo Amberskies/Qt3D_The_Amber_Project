@@ -2,11 +2,12 @@
 
 #include <QTime>
 
-#include "./Window3D.h"
-#include "../GAME_TEST/Src/Lighting/TheSun.h"
-#include "../GAME_TEST/Src/GraphicsDev/Terrain.h"
-#include "../GAME_TEST/Src/GraphicsDev/Player.h"
-#include "../GAME_TEST/Src/User_Input/FollowPlayer3D.h"
+
+#include "Window3D.h"
+#include "Amber/Lighting/TheSun.h"
+#include "Amber/Player.h"
+#include "Amber/Terrain.h"
+#include "Amber/User_Input/FollowPlayer3D.h"
 
 
 class WorldManager : public Qt3DCore::QEntity
