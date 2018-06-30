@@ -40,6 +40,9 @@
     <ClCompile Include="Src\GraphicsDev\Tree.cpp">
       <Filter>Src\GraphicsDev</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GraphicsDev\HeightMap.cpp">
+      <Filter>Src\GraphicsDev</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h">
@@ -66,6 +69,9 @@
       <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
     </ClInclude>
     <ClInclude Include="Src\GraphicsDev\Tree.h">
+      <Filter>Src\GraphicsDev</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GraphicsDev\HeightMap.h">
       <Filter>Src\GraphicsDev</Filter>
     </ClInclude>
   </ItemGroup>

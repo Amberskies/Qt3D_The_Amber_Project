@@ -1,16 +1,17 @@
 #include "Window3D.h"
 #include "Utils/Input.h"
 #include "../../GAME_TEST/Src/GraphicsDev/Gui/FPS_Component/CustomAspect.h"
-#include <QOpengl.h>
 
 Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent)
 {
+	
 	this->registerAspect(new CustomAspect);
 
 	m_WindowRootEntity = new Qt3DCore::QEntity();
 	this->setWidth(400);
 	this->setHeight(225);
+
 
 	qWarning("Window3D Created : User Input events setup");
 }

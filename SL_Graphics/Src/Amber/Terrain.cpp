@@ -13,7 +13,7 @@ Terrain::Terrain(QEntity *root)
 
 Terrain::~Terrain()
 {
-	delete [] m_terrain;
+//	delete [] m_terrain;
 	qWarning("Terrain destroyed");
 }
 

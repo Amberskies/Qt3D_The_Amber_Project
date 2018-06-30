@@ -13,7 +13,7 @@ Tree::Tree(QEntity * root)
 
 Tree::~Tree()
 {
-	delete [] m_Tree;
+//	delete [] m_Tree;
 }
 
 void Tree::createTree(int index, QVector3D location)

@@ -24,13 +24,16 @@ GameTest::~GameTest()
 
 void GameTest::Go()
 {
+	// set up Test values*******************************************
+	Test();
+	m_frameTime.start();
+	
+	//**************************************************************
+
+
 	// Start The Qt3D Engine
 	m_window3D.setRootEntity(m_window3D.getWindowRootEntity());
 
-	// set up Test values*******************************************
-	m_frameTime.start();
-	Test();
-	//**************************************************************
 
 	// start the Main Game Loop event timer.
 	m_timer.start(10);
@@ -87,16 +90,32 @@ void GameTest::MainGameLoop()
 // ************************************
 // *********** Test Area **************
 //*************************************
-
 #include "GraphicsDev/Tree.h"
 Tree *g_tree = nullptr;
+
+
+// switching terrain Generation off for this test //
+#include "GraphicsDev/HeightMap.h"
+HeightMap *g_map;
+// switching terrain Generation off for this test //
+
 
 void GameTest::Test()
 {
 	Qt3DCore::QEntity *root = m_window3D.getWindowRootEntity();
+
+	/////////////////////////////////////////////////////////
+
 	g_tree = new Tree(root);
 	g_tree->createTree(0, QVector3D(4.0f, 0.0f, 6.0f));
 	g_tree->createTree(1, QVector3D(5.0f, 0.0f, 7.0f));
+
+	/////////////////////////////////////////////////////////
+
+	g_map = new HeightMap(root);
+	g_map->createHeightMap();
+
+	/////////////////////////////////////////////////////////
 }
 
 #include "Src/GraphicsDev/Gui/FPS.h"

@@ -8,10 +8,10 @@ WorldManager::WorldManager(Window3D& window3D, QEntity *parent)
 {
 	m_player = new Player(m_win.getWindowRootEntity());
 	m_camOnPlayer = new FollowPlayer3D(m_win.camera(), m_player);
-	m_terrainTile->createTerrainTile(0, QVector3D(0.0f, 0.0f, 10.0f));
-	m_terrainTile->createTerrainTile(1, QVector3D(10.0f, 0.0f, 10.0f));
-	m_terrainTile->createTerrainTile(2, QVector3D(0.0f, 0.0f, 20.0f));
-	m_terrainTile->createTerrainTile(3, QVector3D(10.0f, 0.0f, 20.0f));
+	//m_terrainTile->createTerrainTile(0, QVector3D(0.0f, 0.0f, 10.0f));
+	//m_terrainTile->createTerrainTile(1, QVector3D(10.0f, 0.0f, 10.0f));
+	//m_terrainTile->createTerrainTile(2, QVector3D(0.0f, 0.0f, 20.0f));
+	//m_terrainTile->createTerrainTile(3, QVector3D(10.0f, 0.0f, 20.0f));
 	m_frameTime.start();
 
 	
