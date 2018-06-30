@@ -5,13 +5,9 @@
 
 Terrain::Terrain(QEntity *root)
 	: QEntity(root)
-	, m_rootEntity(root)
 {
 	m_TerrainMesh = ModelLoader::LoadMesh("../Assets/Maps/BaseTile10x10.obj");
 	m_TerrainMaterial = ModelLoader::Texture("../Assets/res/grassy2.png");
-
-			
-
 	qWarning("Terrain Entity Created");
 }
 
@@ -23,7 +19,7 @@ Terrain::~Terrain()
 
 void Terrain::createTerrainTile(int index,QVector3D location)
 {
-	m_terrain[index] = new Qt3DCore::QEntity(m_rootEntity);
+	m_terrain[index] = new Qt3DCore::QEntity(this);
 	Qt3DCore::QTransform *TerrainTransform = new Qt3DCore::QTransform();
 	TerrainTransform->setTranslation(location);
 

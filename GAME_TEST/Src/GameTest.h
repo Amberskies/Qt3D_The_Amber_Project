@@ -23,6 +23,7 @@ class GameTest : public QObject {
   void MainGameLoop();
 
  private:
+	 void Test();
   void TestGameLoop();
   void CleanUpAfterTest();
 

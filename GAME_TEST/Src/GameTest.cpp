@@ -28,8 +28,8 @@ void GameTest::Go()
 	m_window3D.setRootEntity(m_window3D.getWindowRootEntity());
 
 	// set up Test values*******************************************
-	//m_frameTime.start();
-	//Test();
+	m_frameTime.start();
+	Test();
 	//**************************************************************
 
 	// start the Main Game Loop event timer.
@@ -87,6 +87,17 @@ void GameTest::MainGameLoop()
 // ************************************
 // *********** Test Area **************
 //*************************************
+
+#include "GraphicsDev/Tree.h"
+Tree *g_tree = nullptr;
+
+void GameTest::Test()
+{
+	Qt3DCore::QEntity *root = m_window3D.getWindowRootEntity();
+	g_tree = new Tree(root);
+	g_tree->createTree(0, QVector3D(4.0f, 0.0f, 6.0f));
+	g_tree->createTree(1, QVector3D(5.0f, 0.0f, 7.0f));
+}
 
 #include "Src/GraphicsDev/Gui/FPS.h"
 int g_counter = 0;

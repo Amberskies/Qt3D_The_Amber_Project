@@ -17,7 +17,6 @@ public:
 	//Set
 
 private:
-	QEntity * m_rootEntity = nullptr;
 	QEntity * m_terrain[100];
 	Qt3DRender::QMesh *m_TerrainMesh = nullptr;
 	Qt3DExtras::QTextureMaterial *m_TerrainMaterial = nullptr;

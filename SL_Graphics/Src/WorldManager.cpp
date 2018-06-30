@@ -22,7 +22,7 @@ WorldManager::~WorldManager()
 {
 	delete m_camOnPlayer;
 	//delete m_player;
-	delete m_terrainTile;
+	//delete m_terrainTile;
 	delete m_sunshine;
 }
 
