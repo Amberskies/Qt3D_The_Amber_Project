@@ -20,7 +20,7 @@ Player::Player(QEntity *rootEntity)
       ModelLoader::Texture("../Assets/Player/playerTexture.png");
 
   m_playerTransform = new Qt3DCore::QTransform();
-  m_playerTransform->setTranslation(QVector3D(-5.5f, 0.5f, 5.5f));
+  m_playerTransform->setTranslation(QVector3D(5.5f, 0.5f, 5.5f));
   m_playerTransform->setRotationY(-45);
   this->addComponent(testMesh);
   this->addComponent(testMaterial);

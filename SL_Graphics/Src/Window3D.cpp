@@ -1,6 +1,7 @@
 #include "Window3D.h"
 #include "Utils/Input.h"
 #include "../../GAME_TEST/Src/GraphicsDev/Gui/FPS_Component/CustomAspect.h"
+#include <QOpengl.h>
 
 Window3D::Window3D(QScreen *parent)
 	: Qt3DWindow(parent)

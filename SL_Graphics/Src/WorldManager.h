@@ -23,7 +23,7 @@ private:
 	
 	Window3D & m_win;
 	TheSun * m_sunshine = nullptr;
-	Terrain *m_terraintile = nullptr;
+	Terrain *m_terrainTile = nullptr;
 	Player * m_player = nullptr;
 	FollowPlayer3D *m_camOnPlayer = nullptr;
 	QTime m_frameTime;
