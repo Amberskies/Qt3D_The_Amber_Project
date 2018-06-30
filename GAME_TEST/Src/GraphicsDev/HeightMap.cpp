@@ -18,15 +18,15 @@ HeightMap::HeightMap(QEntity * parent)
 void HeightMap::createHeightMap()
 {
 	qWarning("HeightMap under construction.");
-	//calcHeight();
+	calcHeight();
 
-	//m_transform = new Qt3DCore::QTransform();
-	//m_transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
+	m_transform = new Qt3DCore::QTransform();
+	m_transform->setTranslation(QVector3D(10.0f, 0.0f, 10.0f));
 
 
-	//m_heightMap->addComponent(m_mesh);
-	//m_heightMap->addComponent(m_material);
-	//m_heightMap->addComponent(m_transform);
+	m_heightMap->addComponent(m_mesh);
+	m_heightMap->addComponent(m_material);
+	m_heightMap->addComponent(m_transform);
 	DrawLine();
 }
 void HeightMap::calcHeight()
@@ -66,8 +66,12 @@ void HeightMap::DrawLine()
 	index_array[ix++] = 0;
 	index_array[ix++] = 1;
 
+	qWarning("Lets Draw a Red line From 0,0,0 to X+1");
+	//////////////////////////////////////////////////////
+
 	Qt3DRender::QGeometry *geometry = new Qt3DRender::QGeometry;
 
+	//////////////////////////////////////////////////////
 	// initialize vertex attribute (positions only)
 	QByteArray bufferBytes;
 	const int num_vertices = 2;
@@ -79,6 +83,8 @@ void HeightMap::DrawLine()
 
 	Qt3DRender::QBuffer *buf(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::VertexBuffer));
 	buf->setData(bufferBytes);
+
+	qWarning("Verticies Set into a buffer");
 	/////////////////////////////////////////////////////
 	Qt3DRender::QAttribute *positionAttribute = new Qt3DRender::QAttribute(buf,
 		Qt3DRender::QAttribute::defaultPositionAttributeName(),
@@ -87,14 +93,16 @@ void HeightMap::DrawLine()
 		num_vertices,
 		0,
 		stride,
-		m_heightMap);
+		0);
 
 	geometry->addAttribute(positionAttribute);
 
-	//initialize connectivity
+	qWarning("Verrticies added to geometry");
+	//////////////////////////////////////////////////
+	//initialize connectivity - connect the dots///////
 
-	//Qt3DRender::QAttribute *ty = new Qt3DRender::QAttribute();
 	Q_ASSERT(sizeof(int) == sizeof(quint32));
+
 
 	int num_indices = 2;
 	QByteArray indexBytes;
@@ -104,27 +112,35 @@ void HeightMap::DrawLine()
 
 	Qt3DRender::QBuffer *indexBuffer(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::IndexBuffer));
 	indexBuffer->setData(indexBytes);
-
+	qWarning("Index buffer setup");
+	////////////////////////////////////////////////////
 	Qt3DRender::QAttribute *indexAttribute = new Qt3DRender::QAttribute(indexBuffer,
 		Qt3DRender::QAttribute::UnsignedInt,
 		1,
 		num_indices);
 	indexAttribute->setAttributeType(Qt3DRender::QAttribute::IndexAttribute);
 	geometry->addAttribute(indexAttribute);
-	
+
+	qWarning("Index added to geometry");
+	////////////////////////////////////////////////////////
+
 	Qt3DRender::QMesh *x_axis_line = new Qt3DRender::QMesh();
 
 	x_axis_line->setGeometry(geometry);
 	x_axis_line->geometryChanged(geometry);
 	x_axis_line->setPrimitiveType(Qt3DRender::QGeometryRenderer::Lines);
+	qWarning("x_axis_line now holds all our data.");
 
 	QEntity *x_axis_entity = new QEntity(m_root);
 	x_axis_entity->addComponent(x_axis_line);
+	qWarning("Mesh(x_axis_line) added to the Entity");
 
 	m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
-	m_material->setAmbient(QColor(Qt::white));
+	m_material->setAmbient(QColor(Qt::red));
 
 	x_axis_entity->addComponent(m_material);
+	qWarning("color material added to entity");
+	///////////////////////////////////////////////////////
 }
 
 
