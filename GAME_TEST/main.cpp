@@ -51,8 +51,14 @@ Movement:
 		as anything to do with movement will allways need to be altered later
 		usualy at the part in the design phase when the animations are known.
 
+Terrain:
+	experimenta; trees ard now working.
+	new ideas for height maps being develoed.
+
 ********************************************
 TODO:
+	looking to create a map around 1km x 1km
+
 
 	time to get us a nice big area with trees on - just to get a feel for things.
 
