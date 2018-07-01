@@ -55,14 +55,24 @@ Terrain:
 	experimenta; trees ard now working.
 	new ideas for height maps being develoed.
 
+	Refactor out all the new files to Static Libs.
+
+	Starting from scratch Draw a line
+
+
 ********************************************
 TODO:
+
+Terrain: Test useing a 10x10 grid and make sure it scales up to anything you need.
+	then develope into a mesh
+	add height values
+	
 	looking to create a map around 1km x 1km
 
 
 	time to get us a nice big area with trees on - just to get a feel for things.
 
-	Refactor out all the new files to Static Libs.
+	
 
 	
 

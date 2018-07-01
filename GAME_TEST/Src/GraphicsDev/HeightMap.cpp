@@ -5,28 +5,28 @@ HeightMap::HeightMap(QEntity * parent)
 	, m_heightMap(new QEntity(parent))
 	, m_root(new QEntity(parent))
 {
-	m_mesh = new QPlaneMesh();
-	m_mesh->setWidth(20.0f);
-	m_mesh->setHeight(20.0f);
-	m_mesh->setMeshResolution({ 4, 4 });
+	//m_mesh = new QPlaneMesh();
+	//m_mesh->setWidth(20.0f);
+	//m_mesh->setHeight(20.0f);
+	//m_mesh->setMeshResolution({ 4, 4 });
 
-	m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
-	m_material->setAmbient(QColor(Qt::darkGreen));
+	//m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
+	//m_material->setAmbient(QColor(Qt::darkGreen));
 
 }
 
 void HeightMap::createHeightMap()
 {
 	qWarning("HeightMap under construction.");
-	calcHeight();
+	//calcHeight();
 
-	m_transform = new Qt3DCore::QTransform();
-	m_transform->setTranslation(QVector3D(10.0f, 0.0f, 10.0f));
+	//m_transform = new Qt3DCore::QTransform();
+	//m_transform->setTranslation(QVector3D(10.0f, 0.0f, 10.0f));
 
 
-	m_heightMap->addComponent(m_mesh);
-	m_heightMap->addComponent(m_material);
-	m_heightMap->addComponent(m_transform);
+	//m_heightMap->addComponent(m_mesh);
+	//m_heightMap->addComponent(m_material);
+	//m_heightMap->addComponent(m_transform);
 	DrawLine();
 }
 void HeightMap::calcHeight()
@@ -44,7 +44,7 @@ void HeightMap::calcHeight()
 #include <QGeometry>
 #include <QBuffer>
 #include <QAttribute>
-#include <QtGlobal>
+//#include <QtGlobal>
 #include <QMesh>
 
 void HeightMap::DrawLine()
@@ -97,7 +97,7 @@ void HeightMap::DrawLine()
 
 	geometry->addAttribute(positionAttribute);
 
-	qWarning("Verrticies added to geometry");
+	qWarning("Verticies added to geometry");
 	//////////////////////////////////////////////////
 	//initialize connectivity - connect the dots///////
 
@@ -131,15 +131,17 @@ void HeightMap::DrawLine()
 	x_axis_line->setPrimitiveType(Qt3DRender::QGeometryRenderer::Lines);
 	qWarning("x_axis_line now holds all our data.");
 
-	QEntity *x_axis_entity = new QEntity(m_root);
-	x_axis_entity->addComponent(x_axis_line);
-	qWarning("Mesh(x_axis_line) added to the Entity");
-
 	m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
 	m_material->setAmbient(QColor(Qt::red));
 
+	m_transform = new Qt3DCore::QTransform();
+	m_transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
+
+
+	QEntity *x_axis_entity = new QEntity(m_root);
+	x_axis_entity->addComponent(x_axis_line);
 	x_axis_entity->addComponent(m_material);
-	qWarning("color material added to entity");
+	x_axis_entity->addComponent(m_transform);
 	///////////////////////////////////////////////////////
 }
 
