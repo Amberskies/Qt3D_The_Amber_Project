@@ -1,135 +1,113 @@
 #include "HeightMap.h"
 
+
 HeightMap::HeightMap(QEntity * parent)
 	: QEntity(parent)
 	, m_heightMap(new QEntity(parent))
 	, m_root(new QEntity(parent))
 {
-	//m_mesh = new QPlaneMesh();
-	//m_mesh->setWidth(20.0f);
-	//m_mesh->setHeight(20.0f);
-	//m_mesh->setMeshResolution({ 4, 4 });
-
-	//m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
-	//m_material->setAmbient(QColor(Qt::darkGreen));
 
 }
 
 void HeightMap::createHeightMap()
 {
 	qWarning("HeightMap under construction.");
-	//calcHeight();
-
-	//m_transform = new Qt3DCore::QTransform();
-	//m_transform->setTranslation(QVector3D(10.0f, 0.0f, 10.0f));
-
-
-	//m_heightMap->addComponent(m_mesh);
-	//m_heightMap->addComponent(m_material);
-	//m_heightMap->addComponent(m_transform);
-	DrawLine();
+	vertices();
+	indices();
+	DrawMap();
 }
-void HeightMap::calcHeight()
+
+void HeightMap::vertices()
 {
-	QVector3D height = { 0.0f, 0.5f, 0.0f };
+	const int num_verts = 3;
+	m_vertices = new Vertex3D [num_verts];
+	// Position for Vertex 0
+	m_vertices[0].pos = { 0.0f, 0.0f, 0.0f };
+	// Normal for Vertex 0
+	m_vertices[0].nor = { 0.0f, 1.0f, 0.0f };
 
-	int firstVertex = m_mesh->firstVertex();
-	int vertexCount = m_mesh->vertexCount();
-	m_currentMap = m_mesh->geometry();
+	// Position for Vertex 1
+	m_vertices[1].pos = { 0.0f, 0.0f, 1.0f };
+	// Normal for Vertex 1
+	m_vertices[1].nor = { 0.0f, 1.0f, 0.0f };
 
-	qDebug() << "firstVertex : " << firstVertex;
-	qDebug() << "vertexCount : " << vertexCount;
-	qDebug() << "Geometry    : " << m_currentMap;
+	// Position for Vertex 2
+	m_vertices[2].pos = { 1.0f, 0.0f, 0.0f };
+	// Normal for Vertex 2
+	m_vertices[2].nor = { 0.0f, 1.0f, 0.0f };
+
 }
-#include <QGeometry>
-#include <QBuffer>
-#include <QAttribute>
-//#include <QtGlobal>
-#include <QMesh>
 
-void HeightMap::DrawLine()
+void HeightMap::indices()
 {
-	float vertex_array[3 * 2]; // xyz*2 for two vertices
+	const int num_inds = 3;
+	m_indices = new uint[num_inds];
 
 	int ix = 0;
-	vertex_array[ix++] = 0.0f;
-	vertex_array[ix++] = 0.0f;
-	vertex_array[ix++] = 0.0f;
 
-	vertex_array[ix++] = 1.0f; // X-axis.
-	vertex_array[ix++] = 0.0f;
-	vertex_array[ix++] = 0.0f;
+	m_indices[ix++] = 0;
+	m_indices[ix++] = 1;
+	m_indices[ix++] = 2;
 
-	uint index_array[2]; // used to connect vertex 0 and 1 to make a line.
+}
 
-	ix = 0;
-	index_array[ix++] = 0;
-	index_array[ix++] = 1;
 
-	qWarning("Lets Draw a Red line From 0,0,0 to X+1");
-	//////////////////////////////////////////////////////
 
-	Qt3DRender::QGeometry *geometry = new Qt3DRender::QGeometry;
+void HeightMap::DrawMap()
+{
+	QByteArray VertexBytes, indexBytes;
 
-	//////////////////////////////////////////////////////
-	// initialize vertex attribute (positions only)
-	QByteArray bufferBytes;
-	const int num_vertices = 2;
-	const quint32 elementSize = 3; // float xyz
+	const int num_vertices = 3; // 
+ 	const quint32 elementSize = 3 + 3; // 3 for position, 3 for normal
 	const quint32 stride = elementSize * sizeof(float);
-	bufferBytes.resize(stride *num_vertices);
 
-	memcpy(bufferBytes.data(), reinterpret_cast<const char*>(vertex_array), bufferBytes.size());
+	const int num_indices = 3;
+	const uint index_element_size = 1; // 1 number per index
+	
+	VertexBytes.resize(stride *num_vertices);
+	Q_ASSERT(sizeof(int) == sizeof(uint));
+	indexBytes.resize(num_indices * sizeof(uint));
 
-	Qt3DRender::QBuffer *buf(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::VertexBuffer));
-	buf->setData(bufferBytes);
+	memcpy(VertexBytes.data(), reinterpret_cast<const char*>(m_vertices), VertexBytes.size());
+	memcpy(indexBytes.data(), reinterpret_cast<const char*>(m_indices), indexBytes.size());
 
-	qWarning("Verticies Set into a buffer");
-	/////////////////////////////////////////////////////
+	Qt3DRender::QBuffer *vertexBuffer(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::VertexBuffer));
+	Qt3DRender::QBuffer *indexBuffer(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::IndexBuffer));
+
+	vertexBuffer->setData(VertexBytes);
+	indexBuffer->setData(indexBytes);
+
+	
 	Qt3DRender::QAttribute *positionAttribute = new Qt3DRender::QAttribute(buf,
 		Qt3DRender::QAttribute::defaultPositionAttributeName(),
 		Qt3DRender::QAttribute::Float,
-		3,
+		3, // 3 verts = 1 triangle
 		num_vertices,
-		0,
+		0, // offset
 		stride,
-		0);
-
-	geometry->addAttribute(positionAttribute);
-
-	qWarning("Verticies added to geometry");
-	//////////////////////////////////////////////////
-	//initialize connectivity - connect the dots///////
-
-	Q_ASSERT(sizeof(int) == sizeof(quint32));
-
-
-	int num_indices = 2;
-	QByteArray indexBytes;
-	indexBytes.resize(num_indices * sizeof(quint32));
-
-	memcpy(indexBytes.data(), reinterpret_cast<const char*>(index_array), indexBytes.size());
-
-	Qt3DRender::QBuffer *indexBuffer(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::IndexBuffer));
-	indexBuffer->setData(indexBytes);
-	qWarning("Index buffer setup");
-	////////////////////////////////////////////////////
+		0); // node parent if part of a bigger mesh.
+	
 	Qt3DRender::QAttribute *indexAttribute = new Qt3DRender::QAttribute(indexBuffer,
 		Qt3DRender::QAttribute::UnsignedInt,
-		1,
-		num_indices);
+		index_element_size,
+		num_indices,
+		0, // offset
+		0, // index_stride,
+		0); // parent node if part of a bigger object.
+
+	positionAttribute->setAttributeType(Qt3DRender::QAttribute::VertexAttribute);
 	indexAttribute->setAttributeType(Qt3DRender::QAttribute::IndexAttribute);
+
+	Qt3DRender::QGeometry *geometry = new Qt3DRender::QGeometry;
+	geometry->addAttribute(positionAttribute);
 	geometry->addAttribute(indexAttribute);
 
-	qWarning("Index added to geometry");
 	////////////////////////////////////////////////////////
 
-	Qt3DRender::QMesh *x_axis_line = new Qt3DRender::QMesh();
-
-	x_axis_line->setGeometry(geometry);
-	x_axis_line->geometryChanged(geometry);
-	x_axis_line->setPrimitiveType(Qt3DRender::QGeometryRenderer::Lines);
-	qWarning("x_axis_line now holds all our data.");
+	m_mesh = new Qt3DRender::QGeometryRenderer();
+	m_mesh->setGeometry(geometry);
+	m_mesh->setPrimitiveType(Qt3DRender::QGeometryRenderer::Triangles);
+	qWarning("m_mesh (Geometry Renderer Component) now holds all our data.");
 
 	m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
 	m_material->setAmbient(QColor(Qt::red));
@@ -137,11 +115,9 @@ void HeightMap::DrawLine()
 	m_transform = new Qt3DCore::QTransform();
 	m_transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
 
-
-	QEntity *x_axis_entity = new QEntity(m_root);
-	x_axis_entity->addComponent(x_axis_line);
-	x_axis_entity->addComponent(m_material);
-	x_axis_entity->addComponent(m_transform);
+	m_heightMap->addComponent(m_mesh);
+	m_heightMap->addComponent(m_material);
+	m_heightMap->addComponent(m_transform);
 	///////////////////////////////////////////////////////
 }
 
