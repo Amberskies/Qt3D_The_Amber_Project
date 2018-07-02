@@ -9,13 +9,6 @@
 #include <QGeometryRenderer>
 #include <QDiffuseSpecularMaterial>
 #include <QTransform>
-#include <QVector3D>
-
-struct Vertex3D
-{
-	QVector3D pos;
-	QVector3D nor;
-};
 
 class HeightMap : public Qt3DCore::QEntity
 {
@@ -23,21 +16,20 @@ class HeightMap : public Qt3DCore::QEntity
 
 public:
 	explicit HeightMap(QEntity *parent = nullptr);
+	~HeightMap();
 
-	void createHeightMap();
+	void createHeightMap(float mapsideSIZE = 1, int numVerts = 2);
 
 private:
 	void vertices();
 	void indices();
-
 	void DrawMap();
-
-	Vertex3D *m_vertices = nullptr;
-	uint *m_indices = nullptr;
 
 	QEntity * m_heightMap = nullptr;
 	QEntity * m_root = nullptr;
-	Qt3DRender::QGeometryRenderer *m_mesh = nullptr;
-	Qt3DExtras::QDiffuseSpecularMaterial *m_material = nullptr;
-	Qt3DCore::QTransform *m_transform = nullptr;
+
+	float SIZE = 1; 
+	int VERTEX_COUNT = 2; 
+	float *m_vertices = nullptr;
+	uint *m_indices = nullptr;
 };

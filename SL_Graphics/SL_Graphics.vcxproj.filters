@@ -20,9 +20,6 @@
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
     <ClInclude Include="sl_graphics_global.h" />
-    <ClInclude Include="Src\Window3D.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Utils\Input.h">
       <Filter>Src\Utils</Filter>
     </ClInclude>
@@ -77,5 +74,10 @@
     <ClCompile Include="Src\Amber\Terrain.cpp">
       <Filter>Src\Amber</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\Window3D.h">
+      <Filter>Src</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

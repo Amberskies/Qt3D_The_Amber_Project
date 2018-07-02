@@ -59,22 +59,27 @@ Terrain:
 
 	Starting from scratch Draw a line
 
+	Terrain: Test useing a 10x10 grid and make sure it scales up to anything you need.
+	then develope into a mesh
+	add height values createMap(800, 128) seems to be reasonable
+	Trees work 
+
+	looking to create a map around 1km x 1km but takes about an hour to make the map
 
 ********************************************
 TODO:
-
-Terrain: Test useing a 10x10 grid and make sure it scales up to anything you need.
-	then develope into a mesh
-	add height values
-	
-	looking to create a map around 1km x 1km
+	HeightMap stage 2 : add a texture ???
+	HeightMap stage 3 : add a heightmap layer
+	heightMap stage 4 : dont forget to add normals so it lights up proper.
 
 
+	Randomize tree placement or develope an asset map ??? Asset Manager
+	hmmm.... seems allways to head towards Asset management
+
+	Think about haveing an atlas of maps. - will create a massive open world ie 10 maps x 10map = 8km square Atlas.
+
+	look into seperating it out into map generator as a seperate programe that can save maps to Hard Drive
 	time to get us a nice big area with trees on - just to get a feel for things.
-
-	
-
-	
 
 	This will lead into better Asset Management
 	and aiming for an Atlas of Maps - ooer - (a full Planet maybe ?????)

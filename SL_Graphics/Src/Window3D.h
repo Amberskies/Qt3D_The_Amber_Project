@@ -1,4 +1,6 @@
 #pragma once
+
+#include <QObject>
 #include <Qt3DWindow>
 #include <QEntity>
 #include <QCamera>
@@ -8,6 +10,8 @@
 
 class Window3D : public Qt3DExtras::Qt3DWindow
 {
+	Q_OBJECT
+
 public:
 	Window3D(QScreen *parent = nullptr);
 	~Window3D();

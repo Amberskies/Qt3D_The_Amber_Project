@@ -6,11 +6,23 @@ HeightMap::HeightMap(QEntity * parent)
 	, m_heightMap(new QEntity(parent))
 	, m_root(new QEntity(parent))
 {
-
+	// Empty
 }
 
-void HeightMap::createHeightMap()
+HeightMap::~HeightMap()
 {
+	delete m_indices;
+	delete m_vertices;
+	delete m_heightMap;
+}
+
+void HeightMap::createHeightMap(float mapsideSIZE, int numVerts)
+{
+	// size of 1 side starts at 0-1
+	SIZE = mapsideSIZE;
+	// number of vertices down 1 side add 1 as it starts at 0
+	VERTEX_COUNT = numVerts;
+
 	qWarning("HeightMap under construction.");
 	vertices();
 	indices();
@@ -19,35 +31,44 @@ void HeightMap::createHeightMap()
 
 void HeightMap::vertices()
 {
-	const int num_verts = 3;
-	m_vertices = new Vertex3D [num_verts];
+
+	m_vertices = new float[(VERTEX_COUNT * VERTEX_COUNT) * 3];
 	// Position for Vertex 0
-	m_vertices[0].pos = { 0.0f, 0.0f, 0.0f };
-	// Normal for Vertex 0
-	m_vertices[0].nor = { 0.0f, 1.0f, 0.0f };
-
-	// Position for Vertex 1
-	m_vertices[1].pos = { 0.0f, 0.0f, 1.0f };
-	// Normal for Vertex 1
-	m_vertices[1].nor = { 0.0f, 1.0f, 0.0f };
-
-	// Position for Vertex 2
-	m_vertices[2].pos = { 1.0f, 0.0f, 0.0f };
-	// Normal for Vertex 2
-	m_vertices[2].nor = { 0.0f, 1.0f, 0.0f };
-
+	int vertexPointer = 0;
+	for (int i = 0; i < VERTEX_COUNT; i++) 
+	{
+		for (int j = 0; j < VERTEX_COUNT; j++) 
+		{
+			qDebug() << "Pointer = " << vertexPointer;
+			m_vertices[vertexPointer * 3] = (float)j / ((float)VERTEX_COUNT - 1) * SIZE;
+			m_vertices[vertexPointer * 3 + 1] = 0;
+			m_vertices[vertexPointer * 3 + 2] = (float)i / ((float)VERTEX_COUNT - 1) * SIZE;
+			vertexPointer++;
+		}
+	}
 }
 
 void HeightMap::indices()
 {
-	const int num_inds = 3;
-	m_indices = new uint[num_inds];
+	m_indices = new uint[6 * ((VERTEX_COUNT - 1) * (VERTEX_COUNT - 1))];
 
-	int ix = 0;
-
-	m_indices[ix++] = 0;
-	m_indices[ix++] = 1;
-	m_indices[ix++] = 2;
+	int pointer = 0;
+	for (int gz = 0; gz<VERTEX_COUNT - 1; gz++) 
+	{
+		for (int gx = 0; gx<VERTEX_COUNT - 1; gx++)
+		{
+			int topLeft = (gz*VERTEX_COUNT) + gx;
+			int topRight = topLeft + 1;
+			int bottomLeft = ((gz + 1)*VERTEX_COUNT) + gx;
+			int bottomRight = bottomLeft + 1;
+			m_indices[pointer++] = topLeft;
+			m_indices[pointer++] = bottomLeft;
+			m_indices[pointer++] = topRight;
+			m_indices[pointer++] = topRight;
+			m_indices[pointer++] = bottomLeft;
+			m_indices[pointer++] = bottomRight;
+		}
+	}
 
 }
 
@@ -57,16 +78,16 @@ void HeightMap::DrawMap()
 {
 	QByteArray VertexBytes, indexBytes;
 
-	const int num_vertices = 3; // 
- 	const quint32 elementSize = 3 + 3; // 3 for position, 3 for normal
-	const quint32 stride = elementSize * sizeof(float);
+	const int num_vertices = (VERTEX_COUNT * VERTEX_COUNT); 
+ 	const uint elementSize = 3; // 3 floats per position
+	//const uint stride = elementSize * sizeof(float);
 
-	const int num_indices = 3;
-	const uint index_element_size = 1; // 1 number per index
+	const int num_indices = 6 * ((VERTEX_COUNT - 1) * (VERTEX_COUNT - 1));
+	const uint index_element_size = 1; // 1 uint per index
 	
-	VertexBytes.resize(stride *num_vertices);
+	VertexBytes.resize((elementSize * sizeof(float)) *num_vertices);
 	Q_ASSERT(sizeof(int) == sizeof(uint));
-	indexBytes.resize(num_indices * sizeof(uint));
+	indexBytes.resize((index_element_size * sizeof(uint)) * num_indices);
 
 	memcpy(VertexBytes.data(), reinterpret_cast<const char*>(m_vertices), VertexBytes.size());
 	memcpy(indexBytes.data(), reinterpret_cast<const char*>(m_indices), indexBytes.size());
@@ -78,13 +99,13 @@ void HeightMap::DrawMap()
 	indexBuffer->setData(indexBytes);
 
 	
-	Qt3DRender::QAttribute *positionAttribute = new Qt3DRender::QAttribute(buf,
+	Qt3DRender::QAttribute *positionAttribute = new Qt3DRender::QAttribute(vertexBuffer,
 		Qt3DRender::QAttribute::defaultPositionAttributeName(),
 		Qt3DRender::QAttribute::Float,
 		3, // 3 verts = 1 triangle
 		num_vertices,
 		0, // offset
-		stride,
+		0, //stride,
 		0); // node parent if part of a bigger mesh.
 	
 	Qt3DRender::QAttribute *indexAttribute = new Qt3DRender::QAttribute(indexBuffer,
@@ -104,15 +125,15 @@ void HeightMap::DrawMap()
 
 	////////////////////////////////////////////////////////
 
-	m_mesh = new Qt3DRender::QGeometryRenderer();
+	Qt3DRender::QGeometryRenderer *m_mesh = new Qt3DRender::QGeometryRenderer();
 	m_mesh->setGeometry(geometry);
 	m_mesh->setPrimitiveType(Qt3DRender::QGeometryRenderer::Triangles);
 	qWarning("m_mesh (Geometry Renderer Component) now holds all our data.");
 
-	m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
+	Qt3DExtras::QDiffuseSpecularMaterial *m_material = new Qt3DExtras::QDiffuseSpecularMaterial();
 	m_material->setAmbient(QColor(Qt::red));
 
-	m_transform = new Qt3DCore::QTransform();
+	Qt3DCore::QTransform *m_transform = new Qt3DCore::QTransform();
 	m_transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
 
 	m_heightMap->addComponent(m_mesh);
