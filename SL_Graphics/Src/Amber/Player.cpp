@@ -10,8 +10,8 @@
 Player::Player(QEntity *rootEntity) 
 	: QEntity(rootEntity)
 	, m_deltaTime(0.0f)
-    , m_runSpeed(100.0f)
-    , m_turnSpeed(-100.0f)
+    , m_runSpeed(150.0f)
+    , m_turnSpeed(-150.0f)
     , m_currentSpeed(0.0f)
     , m_currentTurnSpeed(0.0f) {
   Qt3DRender::QMesh *testMesh =
@@ -20,7 +20,7 @@ Player::Player(QEntity *rootEntity)
       ModelLoader::Texture("../Assets/Player/playerTexture.png");
 
   m_playerTransform = new Qt3DCore::QTransform();
-  m_playerTransform->setTranslation(QVector3D(5.5f, 0.5f, 5.5f));
+  m_playerTransform->setTranslation(QVector3D(5.5f, 0.398f, 5.5f));
   m_playerTransform->setRotationY(-45);
   this->addComponent(testMesh);
   this->addComponent(testMaterial);

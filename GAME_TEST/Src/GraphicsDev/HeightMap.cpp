@@ -36,8 +36,6 @@ void HeightMap::createHeightMap(float mapsideSIZE, int numVerts)
 	DrawMap();
 }
 
-
-
 void HeightMap::vertices()
 {
 	m_vert = new Vert3D[VERTEX_COUNT * VERTEX_COUNT];
@@ -56,10 +54,10 @@ void HeightMap::vertices()
 			m_vert[vertexPointer].verts.setY(0.0f);
 			m_vert[vertexPointer].verts.setZ((float)i / ((float)VERTEX_COUNT - 1) * SIZE);
 			m_vert[vertexPointer].norms.setX(0.0f);
-			m_vert[vertexPointer].norms.setY(0.1f);
+			m_vert[vertexPointer].norms.setY(0.1f); // << anyone for a height map ???
 			m_vert[vertexPointer].norms.setZ(0.0f);
-			m_vert[vertexPointer].u = (float)j / ((float)VERTEX_COUNT - 1);
-			m_vert[vertexPointer].v = (float)i / ((float)VERTEX_COUNT - 1);
+			m_vert[vertexPointer].u = (float)j / ((float)VERTEX_COUNT - 1) * 128.0f;
+			m_vert[vertexPointer].v = (float)i / ((float)VERTEX_COUNT - 1) * 128.0f;
 			vertexPointer++;
 		}
 	}
@@ -89,8 +87,6 @@ void HeightMap::indices()
 
 }
 
-
-
 void HeightMap::DrawMap()
 {
 	Qt3DRender::QGeometry *theGeometry = new Qt3DRender::QGeometry;
@@ -101,7 +97,7 @@ void HeightMap::DrawMap()
 	mesh->setPrimitiveType(Qt3DRender::QGeometryRenderer::Triangles);
 	qWarning("m_mesh (Geometry Renderer Component) now holds all our data.");
 
-	Qt3DExtras::QTextureMaterial *material = ModelLoader::Texture("../Assets/res/grassy2.png");
+	Qt3DExtras::QTextureMaterial *material = ModelLoader::Texture("../Assets/res/grassy.png");
 
 	Qt3DCore::QTransform *transform = new Qt3DCore::QTransform();
 	transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));

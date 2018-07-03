@@ -66,6 +66,8 @@ Terrain:
 
 	looking to create a map around 1km x 1km but takes about an hour to make the map
 
+	HeightMap stage 2 : add a texture completed
+
 ********************************************
 TODO:
 	HeightMap stage 2 : add a texture ???
