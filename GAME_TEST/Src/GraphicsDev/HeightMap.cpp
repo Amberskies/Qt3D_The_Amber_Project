@@ -3,10 +3,10 @@
 #include <QGeometryRenderer>
 #include <QBuffer>
 #include <QAttribute>
-#include <QDiffuseSpecularMaterial>
 #include <QTextureMaterial>
 #include <QTransform>
 #include <Utils/ModelLoader.h>
+
 
 HeightMap::HeightMap(QEntity * parent)
 	: QEntity(parent)
@@ -36,8 +36,25 @@ void HeightMap::createHeightMap(float mapsideSIZE, int numVerts)
 	DrawMap();
 }
 
+float HeightMap::HeightFromMap(int x, int y, QImage image)
+{
+	const float MAX_HEIGHT = 50;
+	const float MAX_PIXEL_COLOR = 256.0f * 256.0f * 256.0f;
+
+	float height =  (image.pixelColor(QPoint(x, y)).red()) *
+					(image.pixelColor(QPoint(x, y)).green()) *
+					(image.pixelColor(QPoint(x, y)).blue());
+	height /= (MAX_PIXEL_COLOR * 0.5f);
+	height *= MAX_HEIGHT;
+	height -= (MAX_HEIGHT * 0.25f);
+	qDebug() << "Height = " << height;
+	return height;
+}
+
 void HeightMap::vertices()
 {
+	QImage hmap("../Assets/res/heightmap.png");
+	//VERTEX_COUNT = hmap->height();
 	m_vert = new Vert3D[VERTEX_COUNT * VERTEX_COUNT];
 	
 	//m_vertices = new float[(VERTEX_COUNT * VERTEX_COUNT) * 3];
@@ -51,13 +68,13 @@ void HeightMap::vertices()
 		{
 			qDebug() << "Vertex Pointer = " << vertexPointer;
 			m_vert[vertexPointer].verts.setX((float)j / ((float)VERTEX_COUNT - 1) * SIZE);
-			m_vert[vertexPointer].verts.setY(0.0f);
+			m_vert[vertexPointer].verts.setY(HeightFromMap(i, j, hmap));
 			m_vert[vertexPointer].verts.setZ((float)i / ((float)VERTEX_COUNT - 1) * SIZE);
 			m_vert[vertexPointer].norms.setX(0.0f);
-			m_vert[vertexPointer].norms.setY(0.1f); // << anyone for a height map ???
+			m_vert[vertexPointer].norms.setY(0.1f); 
 			m_vert[vertexPointer].norms.setZ(0.0f);
-			m_vert[vertexPointer].u = (float)j / ((float)VERTEX_COUNT - 1) * 128.0f;
-			m_vert[vertexPointer].v = (float)i / ((float)VERTEX_COUNT - 1) * 128.0f;
+			m_vert[vertexPointer].u = (float)j / ((float)VERTEX_COUNT - 1) * VERTEX_COUNT;
+			m_vert[vertexPointer].v = (float)i / ((float)VERTEX_COUNT - 1) * VERTEX_COUNT;
 			vertexPointer++;
 		}
 	}

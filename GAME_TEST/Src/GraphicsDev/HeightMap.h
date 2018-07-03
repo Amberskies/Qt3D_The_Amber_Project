@@ -4,6 +4,7 @@
 #include <QEntity>
 #include <QGeometry>
 #include <QVector3D>
+#include <QImage>
 
 class HeightMap : public Qt3DCore::QEntity
 {
@@ -25,6 +26,7 @@ private:
 	};
 	Vert3D *m_vert;
 
+	float HeightFromMap(int x, int y, QImage image);
 	void vertices();
 	void indices();
 	void DrawMap();
