@@ -113,7 +113,7 @@ void GameTest::Test()
 	/////////////////////////////////////////////////////////
 
 	g_map = new HeightMap(root);
-	g_map->createHeightMap(800.0f, 128);
+	g_map->createHeightMap(800.0f, 128); // 800.0f x 128 seems a good size
 
 	/////////////////////////////////////////////////////////
 }
