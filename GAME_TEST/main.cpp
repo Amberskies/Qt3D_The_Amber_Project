@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 	Window3D w;
 	w.show();
 
-	w.setBackgroundColor(QColor(QRgb(0xD100908)));
+	w.setBackgroundColor(QColor(Qt::darkBlue));
 
 	GameTest game(w);
 	game.Go();
@@ -64,15 +64,21 @@ Terrain:
 	add height values createMap(800, 128) seems to be reasonable
 	Trees work 
 
-	looking to create a map around 1km x 1km but takes about an hour to make the map
+	looking to create a map around 1km x 1km but takes about an hour to create 
+	all the map data for large resolution numbers even at 64 thats over 4000 sets of data
+	if changed to 256 which is the resolution of the height map being used - 65535 sets of data
+	started the 256 resolution test at 11.17........ 11.20 yikes 
 
-	HeightMap stage 2 : add a texture completed
+	HeightMap stage 2 : add a texture completed testest on Ambient only
+	HeightMap stage 3 : add a heightmap layer tested.
+	heightMap stage 4 : dont forget to add normals so it lights up proper.
+	- sorted  tested useing Phong lighting of simple color on the terrain mesh.
 
 ********************************************
 TODO:
-	HeightMap stage 2 : add a texture ???
-	HeightMap stage 3 : add a heightmap layer
-	heightMap stage 4 : dont forget to add normals so it lights up proper.
+	HeightMap stage 2 : add a texture with Phong lighting effect for now.???
+	
+	
 
 
 	Randomize tree placement or develope an asset map ??? Asset Manager

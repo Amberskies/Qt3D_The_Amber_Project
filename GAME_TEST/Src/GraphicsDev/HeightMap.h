@@ -26,7 +26,8 @@ private:
 	};
 	Vert3D *m_vert;
 
-	float HeightFromMap(int x, int y, QImage image);
+	float HeightFromMap(int x, int z, QImage image);
+	QVector3D calculateNormal(int x, int z, QImage image);
 	void vertices();
 	void indices();
 	void DrawMap();

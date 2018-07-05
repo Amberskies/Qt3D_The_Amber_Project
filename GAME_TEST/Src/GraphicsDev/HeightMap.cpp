@@ -7,7 +7,7 @@
 #include <QTransform>
 #include <Utils/ModelLoader.h>
 
-
+#include <QPhongMaterial>
 HeightMap::HeightMap(QEntity * parent)
 	: QEntity(parent)
 	, m_heightMap(new QEntity(parent))
@@ -36,14 +36,18 @@ void HeightMap::createHeightMap(float mapsideSIZE, int numVerts)
 	DrawMap();
 }
 
-float HeightMap::HeightFromMap(int x, int y, QImage image)
+float HeightMap::HeightFromMap(int x, int z, QImage image)
 {
+	if (x < 0 || x >= image.height() || z <0 || z >= image.height())
+	{
+		return 0.0f;
+	}
 	const float MAX_HEIGHT = 50;
 	const float MAX_PIXEL_COLOR = 256.0f * 256.0f * 256.0f;
 
-	float height =  (image.pixelColor(QPoint(x, y)).red()) *
-					(image.pixelColor(QPoint(x, y)).green()) *
-					(image.pixelColor(QPoint(x, y)).blue());
+	float height =  (image.pixelColor(QPoint(x, z)).red()) *
+					(image.pixelColor(QPoint(x, z)).green()) *
+					(image.pixelColor(QPoint(x, z)).blue());
 	height /= (MAX_PIXEL_COLOR * 0.5f);
 	height *= MAX_HEIGHT;
 	height -= (MAX_HEIGHT * 0.25f);
@@ -51,11 +55,30 @@ float HeightMap::HeightFromMap(int x, int y, QImage image)
 	return height;
 }
 
+QVector3D HeightMap::calculateNormal(int x, int z, QImage image)
+{
+	QVector3D calcNormal = { 0.0f, -1.0f, 0.0f };
+	
+	float heightL = HeightFromMap(x - 1, z, image);
+	float heightR = HeightFromMap(x + 1, z, image);
+	float heightD = HeightFromMap(x, z - 1, image);
+	float heightU = HeightFromMap(x, z + 1, image);
+
+	calcNormal = { heightL - heightR,
+				   2.0f,
+				   heightD - heightU };
+
+	calcNormal.normalize();
+
+	return calcNormal;
+}
+
 void HeightMap::vertices()
 {
 	QImage hmap("../Assets/res/heightmap.png");
 	//VERTEX_COUNT = hmap->height();
 	m_vert = new Vert3D[VERTEX_COUNT * VERTEX_COUNT];
+	QVector3D normal = { 0.0f, -1.0f, 0.0f };
 	
 	//m_vertices = new float[(VERTEX_COUNT * VERTEX_COUNT) * 3];
 	//m_normals = new float[(VERTEX_COUNT * VERTEX_COUNT) * 3];
@@ -70,9 +93,11 @@ void HeightMap::vertices()
 			m_vert[vertexPointer].verts.setX((float)j / ((float)VERTEX_COUNT - 1) * SIZE);
 			m_vert[vertexPointer].verts.setY(HeightFromMap(i, j, hmap));
 			m_vert[vertexPointer].verts.setZ((float)i / ((float)VERTEX_COUNT - 1) * SIZE);
-			m_vert[vertexPointer].norms.setX(0.0f);
-			m_vert[vertexPointer].norms.setY(0.1f); 
-			m_vert[vertexPointer].norms.setZ(0.0f);
+			normal = calculateNormal(i, j, hmap);
+			qDebug() << "Normal = " << normal;
+			m_vert[vertexPointer].norms.setX(normal.x());
+			m_vert[vertexPointer].norms.setY(normal.y());// << things dont seem quiet normal around here.
+			m_vert[vertexPointer].norms.setZ(normal.z());
 			m_vert[vertexPointer].u = (float)j / ((float)VERTEX_COUNT - 1) * VERTEX_COUNT;
 			m_vert[vertexPointer].v = (float)i / ((float)VERTEX_COUNT - 1) * VERTEX_COUNT;
 			vertexPointer++;
@@ -104,6 +129,8 @@ void HeightMap::indices()
 
 }
 
+
+
 void HeightMap::DrawMap()
 {
 	Qt3DRender::QGeometry *theGeometry = new Qt3DRender::QGeometry;
@@ -114,7 +141,10 @@ void HeightMap::DrawMap()
 	mesh->setPrimitiveType(Qt3DRender::QGeometryRenderer::Triangles);
 	qWarning("m_mesh (Geometry Renderer Component) now holds all our data.");
 
-	Qt3DExtras::QTextureMaterial *material = ModelLoader::Texture("../Assets/res/grassy.png");
+
+
+	Qt3DExtras::QPhongMaterial *material = new Qt3DExtras::QPhongMaterial;
+	material->setDiffuse(QColor(Qt::darkGreen));
 
 	Qt3DCore::QTransform *transform = new Qt3DCore::QTransform();
 	transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
@@ -142,24 +172,16 @@ Qt3DRender::QGeometry * HeightMap::makeGeometry()
 	const uint index_element_size = 1; // 1 uint per index
 
 	VertexBytes.resize((elementSize * sizeof(float)) *num_vertices);
-	//NormalsBytes.resize((elementSize * sizeof(float)) *num_vertices);
-	//UVTexBytes.resize(((elementSize - 1) * sizeof(float)) *num_vertices);
 	Q_ASSERT(sizeof(int) == sizeof(uint));
 	indexBytes.resize((index_element_size * sizeof(uint)) * num_indices);
 
 	memcpy(VertexBytes.data(), reinterpret_cast<const char*>(m_vert), VertexBytes.size());
-	//memcpy(NormalsBytes.data(), reinterpret_cast<const char*>(m_normals), NormalsBytes.size());
-	//memcpy(UVTexBytes.data(), reinterpret_cast<const char*>(m_normals), UVTexBytes.size());
 	memcpy(indexBytes.data(), reinterpret_cast<const char*>(m_indices), indexBytes.size());
 
 	Qt3DRender::QBuffer *VertexBuffer(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::VertexBuffer));
-	//Qt3DRender::QBuffer *NormalsBuffer(new Qt3DRender::QBuffer());
-	//Qt3DRender::QBuffer *UVTexBuffer(new Qt3DRender::QBuffer());
 	Qt3DRender::QBuffer *indexBuffer(new Qt3DRender::QBuffer(Qt3DRender::QBuffer::IndexBuffer));
 
 	VertexBuffer->setData(VertexBytes);
-	//NormalsBuffer->setData(NormalsBytes);
-	//UVTexBuffer->setData(UVTexBytes);
 	indexBuffer->setData(indexBytes);
 
 
