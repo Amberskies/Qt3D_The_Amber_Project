@@ -3,21 +3,21 @@
 #include <QGeometryRenderer>
 #include <QBuffer>
 #include <QAttribute>
-#include <QTextureMaterial>
 #include <QTransform>
-#include <Utils/ModelLoader.h>
+#include <QTexture>
 
-#include <QPhongMaterial>
 HeightMap::HeightMap(QEntity * parent)
 	: QEntity(parent)
 	, m_heightMap(new QEntity(parent))
 	, m_root(new QEntity(parent))
+	, m_material(new Qt3DExtras::QDiffuseSpecularMaterial)
 {
 	// Empty
 }
 
 HeightMap::~HeightMap()
 {
+	delete m_material;
 	delete m_indices;
 	delete m_vert;
 	delete m_heightMap;
@@ -51,7 +51,6 @@ float HeightMap::HeightFromMap(int x, int z, QImage image)
 	height /= (MAX_PIXEL_COLOR * 0.5f);
 	height *= MAX_HEIGHT;
 	height -= (MAX_HEIGHT * 0.25f);
-	qDebug() << "Height = " << height;
 	return height;
 }
 
@@ -80,29 +79,24 @@ void HeightMap::vertices()
 	m_vert = new Vert3D[VERTEX_COUNT * VERTEX_COUNT];
 	QVector3D normal = { 0.0f, -1.0f, 0.0f };
 	
-	//m_vertices = new float[(VERTEX_COUNT * VERTEX_COUNT) * 3];
-	//m_normals = new float[(VERTEX_COUNT * VERTEX_COUNT) * 3];
-	//m_textureCoords = new float[(VERTEX_COUNT * VERTEX_COUNT) * 2];
-
 	int vertexPointer = 0;
 	for (int i = 0; i < VERTEX_COUNT; i++) 
 	{
 		for (int j = 0; j < VERTEX_COUNT; j++) 
 		{
-			qDebug() << "Vertex Pointer = " << vertexPointer;
 			m_vert[vertexPointer].verts.setX((float)j / ((float)VERTEX_COUNT - 1) * SIZE);
 			m_vert[vertexPointer].verts.setY(HeightFromMap(i, j, hmap));
 			m_vert[vertexPointer].verts.setZ((float)i / ((float)VERTEX_COUNT - 1) * SIZE);
 			normal = calculateNormal(i, j, hmap);
-			qDebug() << "Normal = " << normal;
 			m_vert[vertexPointer].norms.setX(normal.x());
-			m_vert[vertexPointer].norms.setY(normal.y());// << things dont seem quiet normal around here.
+			m_vert[vertexPointer].norms.setY(normal.y());
 			m_vert[vertexPointer].norms.setZ(normal.z());
 			m_vert[vertexPointer].u = (float)j / ((float)VERTEX_COUNT - 1) * VERTEX_COUNT;
 			m_vert[vertexPointer].v = (float)i / ((float)VERTEX_COUNT - 1) * VERTEX_COUNT;
 			vertexPointer++;
 		}
 	}
+	qDebug() << "Vertices calculated = " << VERTEX_COUNT * VERTEX_COUNT;
 }
 
 void HeightMap::indices()
@@ -130,6 +124,23 @@ void HeightMap::indices()
 }
 
 
+void HeightMap::loadMaterial()
+{
+	Qt3DRender::QTexture2D *texture = new Qt3DRender::QTexture2D();
+	Qt3DRender::QTextureImage *tex = new Qt3DRender::QTextureImage();
+	tex->setSource(QUrl::fromLocalFile("../Assets/res/grassy.png"));
+	texture->addTextureImage(tex);
+	Qt3DRender::QTextureWrapMode twm(Qt3DRender::QTextureWrapMode::Repeat);
+	texture->setWrapMode(twm);
+	texture->setGenerateMipMaps(true);
+	texture->setSamples(4);
+
+	m_material->setAmbient({ 25, 30, 25, 255 });
+	m_material->setDiffuse(QVariant::fromValue(texture));
+	m_material->setSpecular(0.01f);
+}
+
+
 
 void HeightMap::DrawMap()
 {
@@ -141,16 +152,13 @@ void HeightMap::DrawMap()
 	mesh->setPrimitiveType(Qt3DRender::QGeometryRenderer::Triangles);
 	qWarning("m_mesh (Geometry Renderer Component) now holds all our data.");
 
-
-
-	Qt3DExtras::QPhongMaterial *material = new Qt3DExtras::QPhongMaterial;
-	material->setDiffuse(QColor(Qt::darkGreen));
-
+	loadMaterial();
+	
 	Qt3DCore::QTransform *transform = new Qt3DCore::QTransform();
 	transform->setTranslation(QVector3D(0.0f, 0.0f, 0.0f));
 
 	m_heightMap->addComponent(mesh);
-	m_heightMap->addComponent(material);
+	m_heightMap->addComponent(m_material);
 	m_heightMap->addComponent(transform);
 }
 
@@ -202,6 +210,10 @@ Qt3DRender::QGeometry * HeightMap::makeGeometry()
 		offset_Normals,
 		stride,
 		0); // node parent if part of a bigger mesh.
+		
+
+	qDebug() << "Attribute default Normal Name = " << Qt3DRender::QAttribute::defaultNormalAttributeName();
+
 
 	Qt3DRender::QAttribute *uvtexAttribute = new Qt3DRender::QAttribute(VertexBuffer,
 		Qt3DRender::QAttribute::defaultTextureCoordinateAttributeName(),

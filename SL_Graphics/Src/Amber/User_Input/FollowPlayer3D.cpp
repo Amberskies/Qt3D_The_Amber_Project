@@ -10,7 +10,7 @@ FollowPlayer3D::FollowPlayer3D(QCamera * WindowsCam, Player * player)
 {
 	m_cameraPos = QVector3D(0.0f, 0.0f, 0.0f);
 
-	m_cameraEntity->lens()->setPerspectiveProjection(45.0f, 16.0f / 9.0f, 0.1f, 100.0f);
+	m_cameraEntity->lens()->setPerspectiveProjection(45.0f, 16.0f / 9.0f, 0.1f, 500.0f);
 	m_cameraEntity->setPosition(m_cameraPos);
 	m_cameraEntity->setUpVector(QVector3D(0.0f, 1.0f, 0.0f));
 	m_cameraEntity->setViewCenter(m_player->getPlayerPosition());

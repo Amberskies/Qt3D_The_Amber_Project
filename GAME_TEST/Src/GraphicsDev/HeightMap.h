@@ -3,6 +3,7 @@
 #include <QObject>
 #include <QEntity>
 #include <QGeometry>
+#include <QDiffuseSpecularMaterial>
 #include <QVector3D>
 #include <QImage>
 
@@ -30,12 +31,13 @@ private:
 	QVector3D calculateNormal(int x, int z, QImage image);
 	void vertices();
 	void indices();
+	void loadMaterial();
 	void DrawMap();
 	Qt3DRender::QGeometry * makeGeometry();
 
 	QEntity * m_heightMap = nullptr;
 	QEntity * m_root = nullptr;
-
+	Qt3DExtras::QDiffuseSpecularMaterial *m_material = nullptr;
 	float SIZE = 1; 
 	int VERTEX_COUNT = 2; 
 	uint *m_indices = nullptr;

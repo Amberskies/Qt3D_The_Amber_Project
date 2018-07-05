@@ -74,10 +74,13 @@ Terrain:
 	heightMap stage 4 : dont forget to add normals so it lights up proper.
 	- sorted  tested useing Phong lighting of simple color on the terrain mesh.
 
+	time for the fun of combining stages 2-4 into a working model for Terrain. 
+	*** Complete
+
 ********************************************
 TODO:
-	time for the fun of combining stages 2-4 into a working model for Terrain.	
 
+	Refactor all the test methods into the SL_Graphics Model.
 
 	Randomize tree placement or develope an asset map ??? Asset Manager
 	hmmm.... seems allways to head towards Asset management

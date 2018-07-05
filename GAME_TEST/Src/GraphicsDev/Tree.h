@@ -2,7 +2,7 @@
 
 #include <QEntity>
 #include <QMesh>
-#include <QTextureMaterial>
+#include <QDiffuseSpecularMaterial>
 #include <QVector3D>
 
 class Tree : public Qt3DCore::QEntity
@@ -21,6 +21,6 @@ private:
 	QEntity * m_rootEntity = nullptr;
 	QEntity * m_Tree[100];
 	Qt3DRender::QMesh *m_TreeMesh = nullptr;
-	Qt3DExtras::QTextureMaterial *m_TreeMaterial = nullptr;
+	Qt3DExtras::QDiffuseSpecularMaterial *m_TreeMaterial = nullptr;
 
 };
