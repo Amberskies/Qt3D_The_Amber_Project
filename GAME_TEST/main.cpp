@@ -76,15 +76,13 @@ Terrain:
 
 ********************************************
 TODO:
-	HeightMap stage 2 : add a texture with Phong lighting effect for now.???
-	
-	
+	time for the fun of combining stages 2-4 into a working model for Terrain.	
 
 
 	Randomize tree placement or develope an asset map ??? Asset Manager
 	hmmm.... seems allways to head towards Asset management
 
-	Think about haveing an atlas of maps. - will create a massive open world ie 10 maps x 10map = 8km square Atlas.
+	Think about having an atlas of maps. - will create a massive open world ie 10 maps x 10map = 8km square Atlas.
 
 	look into seperating it out into map generator as a seperate programe that can save maps to Hard Drive
 	time to get us a nice big area with trees on - just to get a feel for things.
