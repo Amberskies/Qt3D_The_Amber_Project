@@ -78,6 +78,8 @@ Terrain:
 	*** Complete
 
 	bad test results from tree texture - REMOVING
+	reset Tree Materials to a basic material loader.
+	this will now be addressed as our Model Loader utils are upgraded.
 
 ********************************************
 TODO:
