@@ -106,9 +106,6 @@ void GameTest::Test()
 
 	/////////////////////////////////////////////////////////
 
-	g_tree = new Tree(root);
-	g_tree->createTree(0, QVector3D(4.0f, 0.0f, 6.0f));
-	g_tree->createTree(1, QVector3D(5.0f, 0.0f, 7.0f));
 
 	/////////////////////////////////////////////////////////
 
@@ -116,6 +113,11 @@ void GameTest::Test()
 	g_map->createHeightMap(500.0f, 64); // 800.0f x 128 seems a good size
 
 	/////////////////////////////////////////////////////////
+
+	g_tree = new Tree(root);
+	g_tree->createTree(0, QVector3D(4.0f, -0.09f, 6.0f));
+	g_tree->createTree(1, QVector3D(5.0f, -0.09f, 7.0f));
+
 }
 
 #include "Src/GraphicsDev/Gui/FPS.h"

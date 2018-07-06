@@ -77,8 +77,12 @@ Terrain:
 	time for the fun of combining stages 2-4 into a working model for Terrain. 
 	*** Complete
 
+	bad test results from tree texture - REMOVING
+
 ********************************************
 TODO:
+
+	look into texturing the tree's properly.
 
 	Refactor all the test methods into the SL_Graphics Model.
 

@@ -11,6 +11,7 @@ Tree::Tree(QEntity * root)
 	Qt3DRender::QTexture2D *texture = new Qt3DRender::QTexture2D();
 	Qt3DRender::QTextureImage *tex = new Qt3DRender::QTextureImage();
 	tex->setSource(QUrl::fromLocalFile("../Assets/Maps/BaseTree.png"));
+
 	texture->addTextureImage(tex);
 	Qt3DRender::QTextureWrapMode twm(Qt3DRender::QTextureWrapMode::Repeat);
 	texture->setWrapMode(twm);
@@ -18,7 +19,7 @@ Tree::Tree(QEntity * root)
 	texture->setSamples(4);
 
 	m_TreeMaterial->setAmbient({ 30, 25, 20, 255 });
-	m_TreeMaterial->setDiffuse(QVariant::fromValue(texture));
+	//m_TreeMaterial->setDiffuse(QVariant::fromValue(texture));
 	m_TreeMaterial->setSpecular(0.01f);
 	m_TreeMaterial->setShininess(0.1f);
 }
