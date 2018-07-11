@@ -81,12 +81,14 @@ Terrain:
 	reset Tree Materials to a basic material loader.
 	this will now be addressed as our Model Loader utils are upgraded.
 
-********************************************
-TODO:
-
 	Refactor all the test methods into the SL_Graphics Model
 	to creat a new SL_Amber !!! - Yay the Begining of the end.
 	Stage 1 : discribe the Layout/Structure of the static Library
+
+
+********************************************
+TODO:
+
 	stage 2 : move all current files into new structure.
 	stage 3 : merge existing files into useable Simple Generic Files
 				- probably means creating new Front end files like WorldManager for the user.
