@@ -11,3 +11,8 @@ Release 1 : a very basic Static Lib created useing QT3D
   
 Release 2 : Basic Static Lib with first Tests with HeightMap Generation
 	Known issue with tree texturing - see main.cpp notes.
+
+The Way Forwards :
+	Stage 1 : A Libre Office Spread Sheet has been added showing the bare bones structure.
+			  At this stage it could be altered or re-jigged as i go along, but atleast its a guide
+			  for what to expect.
