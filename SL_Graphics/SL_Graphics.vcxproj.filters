@@ -4,80 +4,89 @@
     <Filter Include="Src">
       <UniqueIdentifier>{c82836a6-f774-4c99-b917-bfe9c2505acc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Utils">
-      <UniqueIdentifier>{e052b188-e573-4255-a19c-7ac4521685fc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Src\Amber">
       <UniqueIdentifier>{7de6cac7-b03f-45f3-bdb3-85623a1df240}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Amber\Lighting">
-      <UniqueIdentifier>{b14f9a85-2cd7-4273-acd6-62afc9af6c37}</UniqueIdentifier>
+    <Filter Include="Src\Amber\AssetManager">
+      <UniqueIdentifier>{2b4c1a38-ec63-4b18-9812-d2225dd37859}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Amber\User_Input">
+    <Filter Include="Src\Amber\DisplayManager">
+      <UniqueIdentifier>{7a59d9f4-b7b7-4c7e-9166-c3735d48dc14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\LogicManager">
+      <UniqueIdentifier>{01e961a6-de3b-406b-82e7-b516169caa17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\WorldManager">
+      <UniqueIdentifier>{52ed5115-c1d6-4f91-94c5-87945a0f3970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\Optional">
+      <UniqueIdentifier>{32d782c8-ba26-4f27-967d-2c243532dfbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\DisplayManager\User_Input">
       <UniqueIdentifier>{290c4f6f-0c5e-4647-a62f-acca566f0c93}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
     <ClInclude Include="sl_graphics_global.h" />
-    <ClInclude Include="Src\Utils\Input.h">
-      <Filter>Src\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\ModelLoader.h">
-      <Filter>Src\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\WorldManager.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Amber\User_Input\FollowPlayer3D.h">
-      <Filter>Src\Amber\User_Input</Filter>
+      <Filter>Src\Amber\DisplayManager\User_Input</Filter>
     </ClInclude>
     <ClInclude Include="Src\Amber\User_Input\FollowMouse2.5D.h">
-      <Filter>Src\Amber\User_Input</Filter>
+      <Filter>Src\Amber\DisplayManager\User_Input</Filter>
     </ClInclude>
     <ClInclude Include="Src\Amber\Player.h">
-      <Filter>Src\Amber</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Amber\Lighting\TheSun.h">
-      <Filter>Src\Amber\Lighting</Filter>
+      <Filter>Src\Amber\Optional</Filter>
     </ClInclude>
     <ClInclude Include="Src\Amber\Terrain.h">
+      <Filter>Src\Amber\AssetManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\Input.h">
+      <Filter>Src\Amber\DisplayManager\User_Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utils\ModelLoader.h">
+      <Filter>Src\Amber\AssetManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\Lighting\TheSun.h">
+      <Filter>Src\Amber\DisplayManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\WorldManager.h">
       <Filter>Src\Amber</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SL_Graphics.cpp" />
-    <ClCompile Include="Src\Window3D.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Utils\Input.cpp">
-      <Filter>Src\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Utils\ModelLoader.cpp">
-      <Filter>Src\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\WorldManager.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Amber\User_Input\FollowPlayer3D.cpp">
-      <Filter>Src\Amber\User_Input</Filter>
+      <Filter>Src\Amber\DisplayManager\User_Input</Filter>
     </ClCompile>
     <ClCompile Include="Src\Amber\User_Input\FollowMouse2.5D.cpp">
-      <Filter>Src\Amber\User_Input</Filter>
+      <Filter>Src\Amber\DisplayManager\User_Input</Filter>
     </ClCompile>
     <ClCompile Include="Src\Amber\Player.cpp">
-      <Filter>Src\Amber</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Amber\Lighting\TheSun.cpp">
-      <Filter>Src\Amber\Lighting</Filter>
+      <Filter>Src\Amber\Optional</Filter>
     </ClCompile>
     <ClCompile Include="Src\Amber\Terrain.cpp">
+      <Filter>Src\Amber\AssetManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utils\Input.cpp">
+      <Filter>Src\Amber\DisplayManager\User_Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utils\ModelLoader.cpp">
+      <Filter>Src\Amber\AssetManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\Lighting\TheSun.cpp">
+      <Filter>Src\Amber\DisplayManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Window3D.cpp">
+      <Filter>Src\Amber\DisplayManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\WorldManager.cpp">
       <Filter>Src\Amber</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\Window3D.h">
-      <Filter>Src</Filter>
+      <Filter>Src\Amber\DisplayManager</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

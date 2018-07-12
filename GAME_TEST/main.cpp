@@ -90,6 +90,8 @@ Terrain:
 TODO:
 
 	stage 2 : move all current files into new structure.
+				Filers updated.
+
 	stage 3 : merge existing files into useable Simple Generic Files
 				- probably means creating new Front end files like WorldManager for the user.
 				and then layering our code into directories.

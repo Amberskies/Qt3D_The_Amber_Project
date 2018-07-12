@@ -9,10 +9,7 @@ Tree::Tree(QEntity * root)
 	m_TreeMaterial = ModelLoader::Texture("../Assets/Maps/BaseTree.png");
 }
 
-Tree::~Tree()
-{
-//	delete [] m_Tree;
-}
+Tree::~Tree(){}
 
 void Tree::createTree(int index, QVector3D location)
 {
@@ -23,7 +20,6 @@ void Tree::createTree(int index, QVector3D location)
 	m_Tree[index]->addComponent(m_TreeMesh);
 	m_Tree[index]->addComponent(m_TreeMaterial);
 	m_Tree[index]->addComponent(TreeTransform);
-
 }
 
 Qt3DCore::QEntity * Tree::getTree()
