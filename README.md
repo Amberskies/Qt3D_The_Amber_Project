@@ -14,5 +14,5 @@ Release 2 : Basic Static Lib with first Tests with HeightMap Generation
 
 The Way Forwards :
 	Stage 1 : A Libre Office Spread Sheet has been added showing the bare bones structure.
-			  At this stage it could be altered or re-jigged as i go along, but atleast its a guide
+			  At this stage it could be altered or re-jigged as I go along, but its a guide
 			  for what to expect.

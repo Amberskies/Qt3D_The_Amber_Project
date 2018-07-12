@@ -92,11 +92,8 @@ Terrain:
 
 	Dummy files added so that Github will record the full directory Structure.
 
-
-
 ********************************************
 TODO:
-
 
 	stage 3 : merge existing files into useable Simple Generic Files
 				- probably means creating new Front end files like WorldManager for the user.
