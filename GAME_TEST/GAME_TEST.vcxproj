@@ -100,38 +100,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\GameTest.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.cpp" />
-    <ClCompile Include="Src\GraphicsDev\HeightMap.cpp" />
-    <ClCompile Include="Src\GraphicsDev\Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS.h" />
-    <QtMoc Include="Src\GraphicsDev\HeightMap.h">
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.;.\..\SL_Graphics\Src;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE</IncludePath>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
-      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.;.\..\SL_Graphics\Src;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\Qt3DCore;$(QTDIR)\include\Qt3DAnimation;$(QTDIR)\include\Qt3DExtras;$(QTDIR)\include\Qt3DInput;$(QTDIR)\include\Qt3DLogic;$(QTDIR)\include\Qt3DRender;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE</IncludePath>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_NO_WARNING_OUTPUT;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
-    </QtMoc>
-    <ClInclude Include="Src\GraphicsDev\Tree.h" />
-    <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_NO_WARNING_OUTPUT;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
-    </QtMoc>
-    <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.h">
-      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
-      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;WIN64;QT_NO_DEBUG;QT_NO_WARNING_OUTPUT;NDEBUG;QT_3DCORE_LIB;QT_3DANIMATION_LIB;QT_3DEXTRAS_LIB;QT_3DINPUT_LIB;QT_3DLOGIC_LIB;QT_3DRENDER_LIB;QT_CORE_LIB;QT_GUI_LIB</Define>
-    </QtMoc>
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.h" />
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.h" />
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

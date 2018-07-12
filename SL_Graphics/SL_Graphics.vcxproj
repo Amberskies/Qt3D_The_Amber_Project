@@ -104,6 +104,12 @@
     <ClCompile Include="Src\Amber\Terrain.cpp" />
     <ClCompile Include="Src\Amber\User_Input\FollowMouse2.5D.cpp" />
     <ClCompile Include="Src\Amber\User_Input\FollowPlayer3D.cpp" />
+    <ClCompile Include="Src\Gui\FPS.cpp" />
+    <ClCompile Include="Src\Gui\FPS_Component\CustomAspect.cpp" />
+    <ClCompile Include="Src\Gui\FPS_Component\FpsMonitor.cpp" />
+    <ClCompile Include="Src\Gui\FPS_Component\FpsMonitorBackend.cpp" />
+    <ClCompile Include="Src\Gui\GuiLayer.cpp" />
+    <ClCompile Include="Src\HeightMap.cpp" />
     <ClCompile Include="Src\Utils\Input.cpp" />
     <ClCompile Include="Src\Utils\ModelLoader.cpp" />
     <ClCompile Include="Src\Window3D.cpp" />
@@ -117,6 +123,12 @@
     <ClInclude Include="Src\Amber\Terrain.h" />
     <ClInclude Include="Src\Amber\User_Input\FollowMouse2.5D.h" />
     <ClInclude Include="Src\Amber\User_Input\FollowPlayer3D.h" />
+    <ClInclude Include="Src\Gui\FPS.h" />
+    <QtMoc Include="Src\Gui\FPS_Component\CustomAspect.h" />
+    <QtMoc Include="Src\Gui\FPS_Component\FpsMonitor.h" />
+    <ClInclude Include="Src\Gui\FPS_Component\FpsMonitorBackend.h" />
+    <ClInclude Include="Src\Gui\GuiLayer.h" />
+    <QtMoc Include="Src\HeightMap.h" />
     <ClInclude Include="Src\Utils\Input.h" />
     <ClInclude Include="Src\Utils\ModelLoader.h" />
     <QtMoc Include="Src\Window3D.h" />
