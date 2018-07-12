@@ -113,9 +113,6 @@
     <ClInclude Include="Src\Amber\Player.h">
       <Filter>Src\Amber\Optional\AvatarCreator</Filter>
     </ClInclude>
-    <ClInclude Include="Src\WorldManager.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Gui\FPS_Component\FpsMonitorBackend.h">
       <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
     </ClInclude>
@@ -127,6 +124,45 @@
     </ClInclude>
     <ClInclude Include="Src\Amber\AssetManager\AssetCreator\Tree.h">
       <Filter>Src\Amber\AssetManager\AssetCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\DefaultSetup\DefaultSetup.h">
+      <Filter>Src\Amber\AssetManager\DefaultSetup</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\SaveData\SaveData.h">
+      <Filter>Src\Amber\AssetManager\SaveData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\SystemOptions\SystemOptions.h">
+      <Filter>Src\Amber\DisplayManager\SystemOptions</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\LogicManager\3DInterface\3DInterface.h">
+      <Filter>Src\Amber\LogicManager\3DInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\LogicManager\GameStates\GameStates.h">
+      <Filter>Src\Amber\LogicManager\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\LogicManager\SoundController\SoundController.h">
+      <Filter>Src\Amber\LogicManager\SoundController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\Optional\GameControllers\GameControllers.h">
+      <Filter>Src\Amber\Optional\GameControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\Dice\Dice.h">
+      <Filter>Src\Amber\WorldManager\Dice</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\GameRules\GameRules.h">
+      <Filter>Src\Amber\WorldManager\GameRules</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\WorldStates\WorldStates.h">
+      <Filter>Src\Amber\WorldManager\WorldStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\SpawnController\SpawnController.h">
+      <Filter>Src\Amber\WorldManager\SpawnController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\WorldManager.h">
+      <Filter>Src\Amber</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\AmberManager.h">
+      <Filter>Src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +200,6 @@
     <ClCompile Include="Src\Amber\Player.cpp">
       <Filter>Src\Amber\Optional\AvatarCreator</Filter>
     </ClCompile>
-    <ClCompile Include="Src\WorldManager.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Gui\FPS_Component\CustomAspect.cpp">
       <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
     </ClCompile>
@@ -184,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="Src\Amber\AssetManager\AssetCreator\Tree.cpp">
       <Filter>Src\Amber\AssetManager\AssetCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\WorldManager.cpp">
+      <Filter>Src\Amber</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
