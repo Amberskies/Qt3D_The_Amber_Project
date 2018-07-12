@@ -1,5 +1,9 @@
 #pragma once
 
+
+/*		NOT IN USE
+
+
 #include "Utils/"
 
 class Camera3D
@@ -77,3 +81,5 @@ QDebug operator<<(QDebug dbg, const Camera3D &transform);
 #ifndef QT_NO_DATASTREAM
 QDataStream &operator<<(QDataStream &out, const Camera3D &transform);
 QDataStream &operator>>(QDataStream &in, Camera3D &transform);
+
+*/

@@ -99,6 +99,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SL_Graphics.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\UpdateFpsMonitorsJob.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\Tree.cpp" />
     <ClCompile Include="Src\Amber\Lighting\TheSun.cpp" />
     <ClCompile Include="Src\Amber\Player.cpp" />
     <ClCompile Include="Src\Amber\Terrain.cpp" />
@@ -118,6 +121,9 @@
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
     <ClInclude Include="sl_graphics_global.h" />
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.h" />
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\UpdateFpsMonitorsJob.h" />
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\Tree.h" />
     <ClInclude Include="Src\Amber\Lighting\TheSun.h" />
     <ClInclude Include="Src\Amber\Player.h" />
     <ClInclude Include="Src\Amber\Terrain.h" />

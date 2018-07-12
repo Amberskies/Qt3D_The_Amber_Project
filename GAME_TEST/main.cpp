@@ -85,12 +85,16 @@ Terrain:
 	to creat a new SL_Amber !!! - Yay the Begining of the end.
 	Stage 1 : discribe the Layout/Structure of the static Library
 
+	stage 2 : move all current files into new structure.
+	Filers updated.
+	Folders Updated
+	Files Moved - Ready for Merge.
+
+
 
 ********************************************
 TODO:
 
-	stage 2 : move all current files into new structure.
-				Filers updated.
 
 	stage 3 : merge existing files into useable Simple Generic Files
 				- probably means creating new Front end files like WorldManager for the user.
