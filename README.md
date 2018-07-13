@@ -1,5 +1,6 @@
 # Qt3D_The_Amber_Project
-Long Term Game Project useing Qt3D  in VS2017 with the Qt VS Tools
+Long Term Game Project useing Qt3D  in VS2017 with the Qt VS Tools.
+
 Please remember to check Microsoft and Qt's Terms and Conditions if you
 wish to use this code for anything but FUN! - smiles.
 
