@@ -3,7 +3,7 @@
 #include <QCamera>
 #include <QVector3D>
 
-#include "../Player.h"
+#include "../../Optional/AvatarCreator/Player.h"
 
 class FollowPlayer3D : public Qt3DRender::QCamera
 {

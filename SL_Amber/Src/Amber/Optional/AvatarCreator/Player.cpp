@@ -1,11 +1,11 @@
 #include "Player.h"
 
-#include <Src/Utils/Input.h>
-#include <Src/Utils/ModelLoader.h>
 #include <QDiffuseSpecularMaterial>
 #include <QMesh>
 #include <QTextureMaterial>
 #include <QtMath>
+#include "../../DisplayManager/UserInput/Input.h"
+#include "../../AssetManager/LoadData/ModelLoader.h"
 
 Player::Player(QEntity *rootEntity) 
 	: QEntity(rootEntity)

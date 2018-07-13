@@ -84,38 +84,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SL_Graphics.h" />
-    <ClInclude Include="sl_graphics_global.h" />
-    <ClInclude Include="Src\Utils\Input.h">
-      <Filter>Src\Amber\DisplayManager\UserInput</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Gui\GuiLayer.h">
-      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Gui\FPS.h">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Utils\ModelLoader.h">
-      <Filter>Src\Amber\AssetManager\LoadData</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Amber\Terrain.h">
-      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Amber\User_Input\FollowMouse2.5D.h">
-      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Amber\User_Input\FollowPlayer3D.h">
-      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Amber\Lighting\TheSun.h">
-      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Amber\Player.h">
-      <Filter>Src\Amber\Optional\AvatarCreator</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Gui\FPS_Component\FpsMonitorBackend.h">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.h">
       <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
     </ClInclude>
@@ -164,51 +132,40 @@
     <ClInclude Include="Src\Amber\WorldManager.h">
       <Filter>Src\Amber</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitorBackend.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\LoadData\ModelLoader.h">
+      <Filter>Src\Amber\AssetManager\LoadData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\MapCreator\Terrain.h">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\3DGUI\GuiLayer.h">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\FollowMouse2.5D.h">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\FollowPlayer3D.h">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\TheSun.h">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\UserInput\Input.h">
+      <Filter>Src\Amber\DisplayManager\UserInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\Optional\AvatarCreator\Player.h">
+      <Filter>Src\Amber\Optional\AvatarCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="SL_Amber.h" />
+    <ClInclude Include="sl_Amber_global.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SL_Graphics.cpp" />
-    <ClCompile Include="Src\Utils\Input.cpp">
-      <Filter>Src\Amber\DisplayManager\UserInput</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Gui\GuiLayer.cpp">
-      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Gui\FPS.cpp">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Utils\ModelLoader.cpp">
-      <Filter>Src\Amber\AssetManager\LoadData</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\HeightMap.cpp">
-      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Amber\Terrain.cpp">
-      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Amber\User_Input\FollowMouse2.5D.cpp">
-      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Amber\User_Input\FollowPlayer3D.cpp">
-      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Amber\Lighting\TheSun.cpp">
-      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Window3D.cpp">
-      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Amber\Player.cpp">
-      <Filter>Src\Amber\Optional\AvatarCreator</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Gui\FPS_Component\CustomAspect.cpp">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Gui\FPS_Component\FpsMonitor.cpp">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Gui\FPS_Component\FpsMonitorBackend.cpp">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.cpp">
       <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
     </ClCompile>
@@ -221,19 +178,62 @@
     <ClCompile Include="Src\Amber\WorldManager.cpp">
       <Filter>Src\Amber</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\CustomAspect.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitor.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitorBackend.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\LoadData\ModelLoader.cpp">
+      <Filter>Src\Amber\AssetManager\LoadData</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\MapCreator\HeightMap.cpp">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\MapCreator\Terrain.cpp">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\3DGUI\GuiLayer.cpp">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\3DGUI\Window3D.cpp">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\FollowMouse2.5D.cpp">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\FollowPlayer3D.cpp">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\TheSun.cpp">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\UserInput\Input.cpp">
+      <Filter>Src\Amber\DisplayManager\UserInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\Optional\AvatarCreator\Player.cpp">
+      <Filter>Src\Amber\Optional\AvatarCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="SL_Amber.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="Src\HeightMap.h">
+    <QtMoc Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\CustomAspect.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitor.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\Amber\AssetManager\MapCreator\HeightMap.h">
       <Filter>Src\Amber\AssetManager\MapCreator</Filter>
     </QtMoc>
-    <QtMoc Include="Src\Window3D.h">
+    <QtMoc Include="Src\Amber\DisplayManager\3DGUI\Window3D.h">
       <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
-    </QtMoc>
-    <QtMoc Include="Src\Gui\FPS_Component\CustomAspect.h">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
-    </QtMoc>
-    <QtMoc Include="Src\Gui\FPS_Component\FpsMonitor.h">
-      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

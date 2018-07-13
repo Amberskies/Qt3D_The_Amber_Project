@@ -1,7 +1,7 @@
 #include "Terrain.h"
 
 #include <QTransform>
-#include <Src/Utils/ModelLoader.h>
+#include "../LoadData/ModelLoader.h"
 
 Terrain::Terrain(QEntity *root)
 	: QEntity(root)

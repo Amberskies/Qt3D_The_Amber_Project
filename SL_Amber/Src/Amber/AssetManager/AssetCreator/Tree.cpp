@@ -1,6 +1,6 @@
 #include "Tree.h"
 #include <QTransform>
-#include <Utils/ModelLoader.h>
+#include "../LoadData/ModelLoader.h"
 
 Tree::Tree(QEntity * root)
 	: QEntity(root)

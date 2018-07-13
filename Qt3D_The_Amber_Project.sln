@@ -17,7 +17,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GAME_TEST", "GAME_TEST\GAME
 		{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F} = {9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SL_Graphics", "SL_Graphics\SL_Graphics.vcxproj", "{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SL_Amber", "SL_Amber\SL_Amber.vcxproj", "{9B11126C-D5C3-4E6B-ADF9-F26E153BAB0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

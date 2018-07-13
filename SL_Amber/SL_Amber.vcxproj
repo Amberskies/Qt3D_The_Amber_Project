@@ -98,59 +98,59 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SL_Graphics.cpp" />
+    <ClCompile Include="SL_Amber.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\CustomAspect.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitor.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitorBackend.cpp" />
     <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.cpp" />
     <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\UpdateFpsMonitorsJob.cpp" />
     <ClCompile Include="Src\Amber\AssetManager\AssetCreator\Tree.cpp" />
-    <ClCompile Include="Src\Amber\Lighting\TheSun.cpp" />
-    <ClCompile Include="Src\Amber\Player.cpp" />
-    <ClCompile Include="Src\Amber\Terrain.cpp" />
-    <ClCompile Include="Src\Amber\User_Input\FollowMouse2.5D.cpp" />
-    <ClCompile Include="Src\Amber\User_Input\FollowPlayer3D.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\LoadData\ModelLoader.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\MapCreator\HeightMap.cpp" />
+    <ClCompile Include="Src\Amber\AssetManager\MapCreator\Terrain.cpp" />
+    <ClCompile Include="Src\Amber\DisplayManager\3DGUI\GuiLayer.cpp" />
+    <ClCompile Include="Src\Amber\DisplayManager\3DGUI\Window3D.cpp" />
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\FollowMouse2.5D.cpp" />
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\FollowPlayer3D.cpp" />
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\TheSun.cpp" />
+    <ClCompile Include="Src\Amber\DisplayManager\UserInput\Input.cpp" />
+    <ClCompile Include="Src\Amber\Optional\AvatarCreator\Player.cpp" />
     <ClCompile Include="Src\Amber\WorldManager.cpp" />
-    <ClCompile Include="Src\Gui\FPS.cpp" />
-    <ClCompile Include="Src\Gui\FPS_Component\CustomAspect.cpp" />
-    <ClCompile Include="Src\Gui\FPS_Component\FpsMonitor.cpp" />
-    <ClCompile Include="Src\Gui\FPS_Component\FpsMonitorBackend.cpp" />
-    <ClCompile Include="Src\Gui\GuiLayer.cpp" />
-    <ClCompile Include="Src\HeightMap.cpp" />
-    <ClCompile Include="Src\Utils\Input.cpp" />
-    <ClCompile Include="Src\Utils\ModelLoader.cpp" />
-    <ClCompile Include="Src\Window3D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SL_Graphics.h" />
-    <ClInclude Include="sl_graphics_global.h" />
+    <ClInclude Include="SL_Amber.h" />
+    <ClInclude Include="sl_Amber_global.h" />
     <ClInclude Include="Src\AmberManager.h" />
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS.h" />
+    <QtMoc Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\CustomAspect.h" />
+    <QtMoc Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitor.h" />
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitorBackend.h" />
     <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.h" />
     <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\UpdateFpsMonitorsJob.h" />
     <ClInclude Include="Src\Amber\AssetManager\AssetCreator\Tree.h" />
     <ClInclude Include="Src\Amber\AssetManager\DefaultSetup\DefaultSetup.h" />
+    <ClInclude Include="Src\Amber\AssetManager\LoadData\ModelLoader.h" />
+    <QtMoc Include="Src\Amber\AssetManager\MapCreator\HeightMap.h" />
+    <ClInclude Include="Src\Amber\AssetManager\MapCreator\Terrain.h" />
     <ClInclude Include="Src\Amber\AssetManager\SaveData\SaveData.h" />
+    <ClInclude Include="Src\Amber\DisplayManager\3DGUI\GuiLayer.h" />
+    <QtMoc Include="Src\Amber\DisplayManager\3DGUI\Window3D.h" />
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\FollowMouse2.5D.h" />
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\FollowPlayer3D.h" />
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\TheSun.h" />
     <ClInclude Include="Src\Amber\DisplayManager\SystemOptions\SystemOptions.h" />
-    <ClInclude Include="Src\Amber\Lighting\TheSun.h" />
+    <ClInclude Include="Src\Amber\DisplayManager\UserInput\Input.h" />
     <ClInclude Include="Src\Amber\LogicManager\3DInterface\3DInterface.h" />
     <ClInclude Include="Src\Amber\LogicManager\GameStates\GameStates.h" />
     <ClInclude Include="Src\Amber\LogicManager\SoundController\SoundController.h" />
+    <ClInclude Include="Src\Amber\Optional\AvatarCreator\Player.h" />
     <ClInclude Include="Src\Amber\Optional\GameControllers\GameControllers.h" />
-    <ClInclude Include="Src\Amber\Player.h" />
-    <ClInclude Include="Src\Amber\Terrain.h" />
-    <ClInclude Include="Src\Amber\User_Input\FollowMouse2.5D.h" />
-    <ClInclude Include="Src\Amber\User_Input\FollowPlayer3D.h" />
     <ClInclude Include="Src\Amber\WorldManager.h" />
     <ClInclude Include="Src\Amber\WorldManager\Dice\Dice.h" />
     <ClInclude Include="Src\Amber\WorldManager\GameRules\GameRules.h" />
     <ClInclude Include="Src\Amber\WorldManager\SpawnController\SpawnController.h" />
     <ClInclude Include="Src\Amber\WorldManager\WorldStates\WorldStates.h" />
-    <ClInclude Include="Src\Gui\FPS.h" />
-    <QtMoc Include="Src\Gui\FPS_Component\CustomAspect.h" />
-    <QtMoc Include="Src\Gui\FPS_Component\FpsMonitor.h" />
-    <ClInclude Include="Src\Gui\FPS_Component\FpsMonitorBackend.h" />
-    <ClInclude Include="Src\Gui\GuiLayer.h" />
-    <QtMoc Include="Src\HeightMap.h" />
-    <ClInclude Include="Src\Utils\Input.h" />
-    <ClInclude Include="Src\Utils\ModelLoader.h" />
-    <QtMoc Include="Src\Window3D.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

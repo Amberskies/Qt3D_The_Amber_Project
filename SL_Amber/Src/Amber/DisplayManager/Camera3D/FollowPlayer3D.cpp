@@ -1,6 +1,6 @@
 #include "FollowPlayer3D.h"
 
-#include <Src/Utils/Input.h>
+#include "../UserInput/Input.h"
 #include <QtMath>
 
 
