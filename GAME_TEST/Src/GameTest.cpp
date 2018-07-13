@@ -1,5 +1,5 @@
 #include "GameTest.h"
-#include <Utils/Input.h>
+#include <Amber/DisplayManager/UserInput/Input.h>
 
 GameTest::GameTest(Window3D& window3D)
 	: m_window3D(window3D)
@@ -90,12 +90,12 @@ void GameTest::MainGameLoop()
 // ************************************
 // *********** Test Area **************
 //*************************************
-#include "GraphicsDev/Tree.h"
+#include <Amber/AssetManager/AssetCreator/Tree.h>
 Tree *g_tree = nullptr;
 
 
 // switching terrain Generation off for this test //
-#include "GraphicsDev/HeightMap.h"
+#include <Amber/AssetManager/MapCreator/HeightMap.h>
 HeightMap *g_map;
 // switching terrain Generation off for this test //
 
@@ -120,7 +120,7 @@ void GameTest::Test()
 
 }
 
-#include "Src/GraphicsDev/Gui/FPS.h"
+#include <Amber/AssetManager/AssetCreator/CustomComponents/FPS.h>
 int g_counter = 0;
 FPS *g_fps = nullptr;
 bool g_needFPS = true;

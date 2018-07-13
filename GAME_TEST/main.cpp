@@ -1,5 +1,5 @@
 #include <QGuiApplication>
-#include <Window3D.h>
+#include <Amber/DisplayManager/3DGUI/Window3D.h>
 
 #include "src/GameTest.h"
 
@@ -98,6 +98,7 @@ TODO:
 	stage 3 : merge existing files into useable Simple Generic Files
 				- probably means creating new Front end files like WorldManager for the user.
 				and then layering our code into directories.
+
 	Stage 4 : check Refactoring useing a full Test
 	Stage 5 : RETHINK and do 1-4 AGAIN !
 	Stage 6 : repeat stage 5 if not happy - else Tidy up and FINISH !

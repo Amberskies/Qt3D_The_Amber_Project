@@ -107,6 +107,7 @@
     <ClCompile Include="Src\Amber\Terrain.cpp" />
     <ClCompile Include="Src\Amber\User_Input\FollowMouse2.5D.cpp" />
     <ClCompile Include="Src\Amber\User_Input\FollowPlayer3D.cpp" />
+    <ClCompile Include="Src\Amber\WorldManager.cpp" />
     <ClCompile Include="Src\Gui\FPS.cpp" />
     <ClCompile Include="Src\Gui\FPS_Component\CustomAspect.cpp" />
     <ClCompile Include="Src\Gui\FPS_Component\FpsMonitor.cpp" />
@@ -116,7 +117,6 @@
     <ClCompile Include="Src\Utils\Input.cpp" />
     <ClCompile Include="Src\Utils\ModelLoader.cpp" />
     <ClCompile Include="Src\Window3D.cpp" />
-    <ClCompile Include="Src\WorldManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SL_Graphics.h" />
@@ -137,6 +137,7 @@
     <ClInclude Include="Src\Amber\Terrain.h" />
     <ClInclude Include="Src\Amber\User_Input\FollowMouse2.5D.h" />
     <ClInclude Include="Src\Amber\User_Input\FollowPlayer3D.h" />
+    <ClInclude Include="Src\Amber\WorldManager.h" />
     <ClInclude Include="Src\Amber\WorldManager\Dice\Dice.h" />
     <ClInclude Include="Src\Amber\WorldManager\GameRules\GameRules.h" />
     <ClInclude Include="Src\Amber\WorldManager\SpawnController\SpawnController.h" />
@@ -150,7 +151,6 @@
     <ClInclude Include="Src\Utils\Input.h" />
     <ClInclude Include="Src\Utils\ModelLoader.h" />
     <QtMoc Include="Src\Window3D.h" />
-    <ClInclude Include="Src\WorldManager.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

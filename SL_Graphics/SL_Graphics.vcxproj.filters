@@ -158,11 +158,11 @@
     <ClInclude Include="Src\Amber\WorldManager\SpawnController\SpawnController.h">
       <Filter>Src\Amber\WorldManager\SpawnController</Filter>
     </ClInclude>
-    <ClInclude Include="Src\WorldManager.h">
-      <Filter>Src\Amber</Filter>
-    </ClInclude>
     <ClInclude Include="Src\AmberManager.h">
       <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager.h">
+      <Filter>Src\Amber</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -218,7 +218,7 @@
     <ClCompile Include="Src\Amber\AssetManager\AssetCreator\Tree.cpp">
       <Filter>Src\Amber\AssetManager\AssetCreator</Filter>
     </ClCompile>
-    <ClCompile Include="Src\WorldManager.cpp">
+    <ClCompile Include="Src\Amber\WorldManager.cpp">
       <Filter>Src\Amber</Filter>
     </ClCompile>
   </ItemGroup>

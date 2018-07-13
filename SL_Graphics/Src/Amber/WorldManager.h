@@ -2,12 +2,11 @@
 
 #include <QTime>
 
-
-#include "Window3D.h"
-#include "Amber/Lighting/TheSun.h"
-#include "Amber/Player.h"
-#include "Amber/Terrain.h"
-#include "Amber/User_Input/FollowPlayer3D.h"
+#include "AssetManager/MapCreator/Terrain.h"
+#include "DisplayManager/3DGUI/Window3D.h"
+#include "DisplayManager/Camera3D/TheSun.h"
+#include "DisplayManager/Camera3D/FollowPlayer3D.h"
+#include "Optional/AvatarCreator/Player.h"
 
 
 class WorldManager : public Qt3DCore::QEntity
