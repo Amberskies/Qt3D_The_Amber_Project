@@ -4,14 +4,8 @@
     <Filter Include="Src">
       <UniqueIdentifier>{4d462947-9042-4043-b895-70402cdac9c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\GraphicsDev">
+    <Filter Include="Src\Development">
       <UniqueIdentifier>{aaeb412e-1ec1-4dab-b101-eee8e706a474}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\GraphicsDev\Gui">
-      <UniqueIdentifier>{25c024ad-33b6-432b-8fa0-96b066b1915a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Src\GraphicsDev\Gui\FPS_Component">
-      <UniqueIdentifier>{2e4180c8-7af8-4003-882c-a7c3aa3f1557}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -19,60 +13,10 @@
     <ClCompile Include="Src\GameTest.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS.cpp">
-      <Filter>Src\GraphicsDev\Gui</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.cpp">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.cpp">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.cpp">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.cpp">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.cpp">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\Tree.cpp">
-      <Filter>Src\GraphicsDev</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GraphicsDev\HeightMap.cpp">
-      <Filter>Src\GraphicsDev</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Src\GameTest.h">
       <Filter>Src</Filter>
     </QtMoc>
-    <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\CustomAspect.h">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </QtMoc>
-    <QtMoc Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitor.h">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </QtMoc>
-    <QtMoc Include="Src\GraphicsDev\HeightMap.h">
-      <Filter>Src\GraphicsDev</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS.h">
-      <Filter>Src\GraphicsDev\Gui</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\FpsMonitorBackend.h">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\MovingAverage.h">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GraphicsDev\Gui\FPS_Component\UpdateFpsMonitorsJob.h">
-      <Filter>Src\GraphicsDev\Gui\FPS_Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GraphicsDev\Tree.h">
-      <Filter>Src\GraphicsDev</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include <QGuiApplication>
-#include <Window3D.h>
+#include <Amber/DisplayManager/3DGUI/Window3D.h>
 
 #include "src/GameTest.h"
 
@@ -85,26 +85,42 @@ Terrain:
 	to creat a new SL_Amber !!! - Yay the Begining of the end.
 	Stage 1 : discribe the Layout/Structure of the static Library
 
-
-********************************************
-TODO:
-
 	stage 2 : move all current files into new structure.
+	Filers updated.
+	Folders Updated
+	Files Moved - Ready for Merge.
+
+	Dummy files added so that Github will record the full directory Structure.
+
 	stage 3 : merge existing files into useable Simple Generic Files
-				- probably means creating new Front end files like WorldManager for the user.
-				and then layering our code into directories.
+	- probably means creating new Front end files like WorldManager for the user.
+	and then layering our code into directories.
+
 	Stage 4 : check Refactoring useing a full Test
 	Stage 5 : RETHINK and do 1-4 AGAIN !
 	Stage 6 : repeat stage 5 if not happy - else Tidy up and FINISH !
+
+	
+
+
+********************************************
+TODO:
+	Project completed to acceptable level.
+
+	-Closing this Public side of the Project otherwise I'll never get paid - smiles
+	-Continuing on in Private.
+
+	Enjoy the Code and freely have fun with it - Please check Qt's and Microsoft T&C's if you wish to
+	use any of this code in a commercial Project.
+
+*********************************************
+IDEAS:
 
 	look into texturing the tree's properly.
 	Q: Does QMesh load the UV co-ords as well ?????
 	A: If not - this is the reason for flashing Textures.
 	and means that QMesh is ONLY for the vertex position.
 	If True : we need a UV loader along side our Texture Loader.
-
-*********************************************
-IDEAS:
 
 	Randomize tree placement or develope an asset map ??? Asset Manager
 	hmmm.... seems allways to head towards Asset management

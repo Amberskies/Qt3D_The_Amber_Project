@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{c82836a6-f774-4c99-b917-bfe9c2505acc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber">
+      <UniqueIdentifier>{7de6cac7-b03f-45f3-bdb3-85623a1df240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager">
+      <UniqueIdentifier>{2b4c1a38-ec63-4b18-9812-d2225dd37859}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\DisplayManager">
+      <UniqueIdentifier>{7a59d9f4-b7b7-4c7e-9166-c3735d48dc14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\LogicManager">
+      <UniqueIdentifier>{01e961a6-de3b-406b-82e7-b516169caa17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\WorldManager">
+      <UniqueIdentifier>{52ed5115-c1d6-4f91-94c5-87945a0f3970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\Optional">
+      <UniqueIdentifier>{32d782c8-ba26-4f27-967d-2c243532dfbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\DisplayManager\3DGUI">
+      <UniqueIdentifier>{d1026953-1aac-4ef2-8625-a0926783d756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\LogicManager\3DInterface">
+      <UniqueIdentifier>{a64f3ce1-274f-43fa-a494-628d94604915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\LogicManager\SoundController">
+      <UniqueIdentifier>{d22ed6fb-6971-4ca4-b354-785b28375aaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\LogicManager\GameStates">
+      <UniqueIdentifier>{28479631-fa87-4dbb-9bbf-bb368cf95259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\LoadData">
+      <UniqueIdentifier>{909a5f7b-5b84-4aa2-8c4a-5a5bbd8d4f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\SaveData">
+      <UniqueIdentifier>{1298487f-7d90-4943-af58-72b1d762c77f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\MapCreator">
+      <UniqueIdentifier>{8d27f45d-bbf6-4e79-8bef-49d9f44e1189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\AssetCreator">
+      <UniqueIdentifier>{1bbf9730-69f2-4376-b74e-d43eac2b223b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\DefaultSetup">
+      <UniqueIdentifier>{cee31d5a-04ca-4a71-8a53-014acd611491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\AssetCreator\CustomComponents">
+      <UniqueIdentifier>{f1f7fb68-f1c9-4c63-8f64-d829a904b32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\DisplayManager\SystemOptions">
+      <UniqueIdentifier>{d60f33d7-0799-4aac-9a1f-016873c2a8ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\DisplayManager\Camera3D">
+      <UniqueIdentifier>{cbdde747-1e47-4695-bf45-afd7a88f473a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\DisplayManager\UserInput">
+      <UniqueIdentifier>{290c4f6f-0c5e-4647-a62f-acca566f0c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\WorldManager\Dice">
+      <UniqueIdentifier>{bcf2a978-4d9f-4935-950f-8ba7897239b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\WorldManager\SpawnController">
+      <UniqueIdentifier>{f84e6f35-fd7a-4e21-9657-399a8c1d1cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\WorldManager\GameRules">
+      <UniqueIdentifier>{71158c61-e3fe-4030-9b1e-0f46a57e242d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\WorldManager\WorldStates">
+      <UniqueIdentifier>{eebc1b9c-642e-45d0-b92a-3bd65785ae7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\Optional\AvatarCreator">
+      <UniqueIdentifier>{c132cfb4-9cac-49e8-a2d5-bb9b2b84ee8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\Optional\GameControllers">
+      <UniqueIdentifier>{52449886-d16e-4526-8914-16036fb4ceaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component">
+      <UniqueIdentifier>{f068b49a-7eba-4930-815c-a26e15ce9d9b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\UpdateFpsMonitorsJob.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\Tree.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\DefaultSetup\DefaultSetup.h">
+      <Filter>Src\Amber\AssetManager\DefaultSetup</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\SaveData\SaveData.h">
+      <Filter>Src\Amber\AssetManager\SaveData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\SystemOptions\SystemOptions.h">
+      <Filter>Src\Amber\DisplayManager\SystemOptions</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\LogicManager\3DInterface\3DInterface.h">
+      <Filter>Src\Amber\LogicManager\3DInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\LogicManager\GameStates\GameStates.h">
+      <Filter>Src\Amber\LogicManager\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\LogicManager\SoundController\SoundController.h">
+      <Filter>Src\Amber\LogicManager\SoundController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\Optional\GameControllers\GameControllers.h">
+      <Filter>Src\Amber\Optional\GameControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\Dice\Dice.h">
+      <Filter>Src\Amber\WorldManager\Dice</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\GameRules\GameRules.h">
+      <Filter>Src\Amber\WorldManager\GameRules</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\WorldStates\WorldStates.h">
+      <Filter>Src\Amber\WorldManager\WorldStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager\SpawnController\SpawnController.h">
+      <Filter>Src\Amber\WorldManager\SpawnController</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\AmberManager.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\WorldManager.h">
+      <Filter>Src\Amber</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitorBackend.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\LoadData\ModelLoader.h">
+      <Filter>Src\Amber\AssetManager\LoadData</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\AssetManager\MapCreator\Terrain.h">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\3DGUI\GuiLayer.h">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\FollowMouse2.5D.h">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\FollowPlayer3D.h">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\Camera3D\TheSun.h">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\DisplayManager\UserInput\Input.h">
+      <Filter>Src\Amber\DisplayManager\UserInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Amber\Optional\AvatarCreator\Player.h">
+      <Filter>Src\Amber\Optional\AvatarCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="SL_Amber.h" />
+    <ClInclude Include="sl_Amber_global.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\MovingAverage.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\UpdateFpsMonitorsJob.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\Tree.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\WorldManager.cpp">
+      <Filter>Src\Amber</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\CustomAspect.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitor.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitorBackend.cpp">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\LoadData\ModelLoader.cpp">
+      <Filter>Src\Amber\AssetManager\LoadData</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\MapCreator\HeightMap.cpp">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\AssetManager\MapCreator\Terrain.cpp">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\3DGUI\GuiLayer.cpp">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\3DGUI\Window3D.cpp">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\FollowMouse2.5D.cpp">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\FollowPlayer3D.cpp">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\Camera3D\TheSun.cpp">
+      <Filter>Src\Amber\DisplayManager\Camera3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\DisplayManager\UserInput\Input.cpp">
+      <Filter>Src\Amber\DisplayManager\UserInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Amber\Optional\AvatarCreator\Player.cpp">
+      <Filter>Src\Amber\Optional\AvatarCreator</Filter>
+    </ClCompile>
+    <ClCompile Include="SL_Amber.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\CustomAspect.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component\FpsMonitor.h">
+      <Filter>Src\Amber\AssetManager\AssetCreator\CustomComponents\FPS_Component</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\Amber\AssetManager\MapCreator\HeightMap.h">
+      <Filter>Src\Amber\AssetManager\MapCreator</Filter>
+    </QtMoc>
+    <QtMoc Include="Src\Amber\DisplayManager\3DGUI\Window3D.h">
+      <Filter>Src\Amber\DisplayManager\3DGUI</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

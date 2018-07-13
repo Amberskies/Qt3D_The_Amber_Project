@@ -4,8 +4,8 @@
 #include <QObject>
 #include <QTime>
 #include <QTimer>
-#include <Window3D.h>
-#include <WorldManager.h>
+#include <Amber/DisplayManager/3DGUI/Window3D.h>
+#include <Amber/WorldManager.h>
 
 class GameTest : public QObject {
   Q_OBJECT
